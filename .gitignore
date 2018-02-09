@@ -1,2 +1,5 @@
-#ignore all files that begin with an under in root dir.
+#ignore all files that begin with an underscore in root dir.
 /_*
+
+#ignore node_modules dir
+node_modules/

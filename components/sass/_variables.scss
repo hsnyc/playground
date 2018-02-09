@@ -5,38 +5,35 @@
 //======== 
 
 /*
-    font-family: work sans, sans-serif;
+    font-family: 'Space Mono', monospace;
     font-style: normal;
 
-    Font Weight
-    Light: 300
-    Regular: 400
-    Bold: 700
+    Font Weights:
+    - Regular
+    - Regular Italic
+    - Bold
+    - Bold Italic
 */
 
 //Google Font import
-@import "https://fonts.googleapis.com/css?family=Work+Sans:300,400,700";
+@import "https://fonts.googleapis.com/css?family=Space+Mono";
 
-// $headFont : 'Work Sans', sans-serif;
-$bodyFont : 'Work Sans', sans-serif;
+$bodyFont : 'Space Mono', monospace;
 
 
 //Colors
-$blue          : #0075C9;
-$midblue       : #00B3E3;
-$lightblue     : #AEECEF;
+$darkblack     : #333333;
+$midgrey       : #444444;
+$charcoal      : #65646A;
 
-$dark           :#3B3D40;
-$charcoal       :#65646A;
-$lightgrey      :#CCCCCC;
-$smoke          :#F9F9F9;
+$grey          : #999999;
+$smoke         : #F9F9F9;
+$white         : #ffffff;
 
-$orange         :#FFC658;
-$yellow         :#F6F59C;
-$red            :#EA6852;
+$orange        : #cf8234;
+$papaya        : #dd6f53;
+$avocado       : #96ad6f;
+$blueberry     : #6f83ad;
 
-$lightGreen    : #7AE582;
-$green         : #2C975A;
-$purple        : #7C77B9;
 
 /* Var Ends */

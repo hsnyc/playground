@@ -89,7 +89,7 @@
 
   .toggle-nav:hover, .toggle-nav.active {
       text-decoration:none;
-      color:$blue;
+      color:$blueberry;
   }
 }
 
@@ -104,53 +104,7 @@
 }
 
 @media screen and (max-width: 640px) {
-
-  //Adjustments for bg images in slider
-  #main-c1 { background-position-x: -200px; }
-  #main-c3 { background-position-x: -120px; }
-  
-  .carousel-main .carousel-cell {
-      width: 100%;
-      height: 500px;
-      // height: 800px;
-      // padding-bottom: 20px;
-
-
-      & h2 {
-          font-size: 6.5vw;      
-      }
-  
-      & p {
-          font-size: 5vw;
-      }
-  }
-  
-  .cell-text-r,
-  .cell-text-l {
-      width: 70%;
-      padding: 0px 25px 0px;
-  }
-
-  .carousel-nav {
-      margin-top: -20px;
-  }
-
-  #whats-right > div {
-      padding: 20px 20px 40px;
-  
-      & h1 {
-          font-size: 6.5vw;
-      }
-  
-      & p {
-          font-size: 5vw;
-          padding: 0 20px;
-      }
-  
-      & button {
-          margin-top: 120px;
-      }
-  }
+/* Styles */
 }
 
 /* Smartphones (landscape) ----------- */
@@ -164,8 +118,6 @@
 }
 
 @media screen and (max-width: 320px) {
-  //Adjustments for bg images in slider
-  #main-c1 { background-position-x: -280px; }
-  #main-c3 { background-position-x: -200px; }
+/* Styles */
 }
 

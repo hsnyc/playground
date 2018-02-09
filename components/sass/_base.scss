@@ -4,7 +4,6 @@
 
 body {
   font-family: $bodyFont;
-  // background-color: $blue;
   color: $charcoal;
 }
 
@@ -22,7 +21,7 @@ p {
 }
 
 button {
-  background-color: $midblue;
+  background-color: $blueberry;
   border: none;
   border-radius: 100px;
   color: #fff;
@@ -74,11 +73,11 @@ section {
 .outdatedbrowser {
   margin: 0 auto;
   background: #ccc;
-  color: $blue;
+  color: $blueberry;
   padding: 1em;
   text-align: center;
 
   & a {
-    color: $red;
+    color: $papaya;
   }
 }

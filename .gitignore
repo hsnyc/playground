@@ -1,1 +1,2 @@
-_*
+#ignore all files that begin with an under in root dir.
+/_*

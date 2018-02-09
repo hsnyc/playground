@@ -1,6 +1,12 @@
 # playground
 Just a bunch of random code for learning and experimentation.
 
+**Notes**
+
+Go into the playground dir via terminal.
+Run 'NPM install' to install the Node Packages.
+Then Run 'gulp'.
+
 
 **References**
 

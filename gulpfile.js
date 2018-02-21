@@ -22,7 +22,7 @@ jsSources = [
 ];
 
 //html and sass sources
-htmlSources = [outputDir + '*.html'];
+htmlSources = [outputDir + '**/*.html'];
 sassSources = ['components/sass/style.scss'];
 
 
@@ -38,6 +38,11 @@ gulp.task('styles', function() {
   gulp.src(sassSources)
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(outputDir + 'css'))
+    .pipe(connect.reload())
+});
+
+gulp.task('css', function() {
+  gulp.src('**/css/*.css')
     .pipe(connect.reload())
 });
 
@@ -63,6 +68,7 @@ gulp.task('watch', function() {
   gulp.watch(jsSources, ['js']);
   gulp.watch('components/sass/*.scss', ['styles']);
   gulp.watch(htmlSources,['html']);
+  gulp.watch('**/css/*.css',['css']);
   gulp.watch('components/images/**/*.*',['images']);
 });
 
@@ -73,4 +79,4 @@ gulp.task('connect', function() {
   });
 });
 
-gulp.task('default', ['html', 'styles', 'js', 'images', 'connect', 'watch']);
+gulp.task('default', ['html', 'styles', 'css', 'js', 'images', 'connect', 'watch']);

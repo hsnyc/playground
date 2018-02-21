@@ -371,7 +371,8 @@ th {
 
 body {
   font-family: "Space Mono", monospace;
-  color: #65646A; }
+  color: #65646A;
+  padding: 20px; }
 
 h1, h2, h3, h4, h5 {
   font-weight: normal; }
@@ -397,14 +398,6 @@ button {
 
 section {
   background-color: #F9F9F9; }
-
-/* make a grid */
-.wrapper {
-  width: 100%;
-  /* IE10 Support */ }
-
-.wrapper > * {
-  /* needed for the floated layout*/ }
 
 .group:after {
   content: "";

@@ -5,6 +5,7 @@
 body {
   font-family: $bodyFont;
   color: $charcoal;
+  padding: 20px;
 }
 
 //Atoms
@@ -41,25 +42,6 @@ button {
 
 section {
   background-color: $smoke;
-}
-
-/* make a grid */
-.wrapper {
-  width: 100%;
-  // max-width: 1200px;
-  // margin: 0 auto;
-  // display: grid;
-  // grid-template-columns: 1fr;
-  /* IE10 Support */
-  // -ms-grid-columns: 1fr;
-}
-
-.wrapper > * {
-  // color: #fff;
-  // padding: 20px;
-  // font-size: 150%;
-  /* needed for the floated layout*/
-  // margin-bottom: 10px;
 }
 
 //ClearFix Updated

@@ -44,3 +44,17 @@ var quotes = {
             "Master Oogway"
         ],
 };
+
+//get button to trigger new quote
+var quoteButton = document.querySelector('button');
+
+//create click event
+quoteButton.addEventListener('click', newQuote, false);
+
+
+//create new quote function
+function newQuote() {
+    //lets do this!
+    // alert("I am inside newQuotes function");
+    console.log("I am in!");
+}

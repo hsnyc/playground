@@ -43,9 +43,6 @@ button {
     opacity: 0.8;
   }
 
-section {
-  background-color: #F9F9F9; }
-
 .group:after {
   content: "";
   display: table;

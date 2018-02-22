@@ -40,9 +40,13 @@ var quotes = {
             "Master Oogway"
         ],
     11 : [
-            "Self-control is strength; right thought is mastery; calmness is power; say into your heart, 'Peace, be still'",
-            "Master Oogway"
+            "Mastering others is strength. Mastering yourself is true power.",
+            "Lao Tzu"
         ],
+    12 : [
+            "Nature does not hurry, yet everything is accomplished.",
+            "Lao Tzu"
+        ]
 };
 
 //get button to trigger new quote
@@ -51,10 +55,49 @@ var quoteButton = document.querySelector('button');
 //create click event
 quoteButton.addEventListener('click', newQuote, false);
 
-
 //create new quote function
 function newQuote() {
     //lets do this!
-    // alert("I am inside newQuotes function");
-    console.log("I am in!");
+
+    // console.log();
+
+    //get a random number from 1 - (total# of quotes)
+    //total# of quotes obtained by using 'Object.keys(quotes).length'
+    var totalQuotes = Object.keys(quotes).length;
+    var randomQuote = getRandomInt(1, totalQuotes + 1);
+    
+    //lets get random!
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+      }
+
+    //console.log(randomQuote);
+    // console.log("I am in!");
+
+    //call 'replace quote' function
+    replaceQuote(randomQuote); 
+}
+
+function replaceQuote(num) {
+    //get blockquote and author
+    var blockQuote = document.querySelector('blockquote');
+    var authorP = document.getElementById('author');
+
+    //get new quote and author from the quotes object by using a random number
+    var quote = quotes[num][0];
+    var author = quotes[num][1];
+
+    // console.log(quote);
+    // console.log(author);
+
+    //change quote
+    blockQuote.innerHTML = quote;
+
+    //change author
+    authorP.innerHTML = author;
+    
+    console.log(blockQuote.clientHeight);
+
 }

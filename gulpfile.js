@@ -26,9 +26,7 @@ htmlSources = [outputDir + '**/*.html'];
 sassSources = ['components/sass/style.scss'];
 
 
-
 //Tasks Begin
-
 gulp.task('html', function() {
   gulp.src(htmlSources)
   .pipe(connect.reload())

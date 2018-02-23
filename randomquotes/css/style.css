@@ -74,6 +74,7 @@ button {
 
 /*==== QUOTES =====*/
 #quotes-wrapper {
+
   max-width: 680px;
   margin: 0 auto;
   display: flex;
@@ -82,14 +83,40 @@ button {
 }
 
 #quote {
+  position: relative;
   text-align: center;
+  /* opacity: 0; */
+}
+
+#quote:before, #quote:after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 90px;
+  left: 50px;
+  width: 50%;
+  top: 50%;
+  max-width:680px;
+  box-shadow: 0px 15px 20px 2px rgba(119, 119, 119, 0.60);
+  transform: rotate(-3deg);
+}
+
+#quote:after {
+  transform: rotate(3deg);
+  right: 50px;
+  left: auto;
 }
 
 blockquote {
+  position: relative;
   background-color: antiquewhite;
+  /* box-shadow: 2px 2px 20px 2px rgba(133, 133, 129, 0.699); */
   font-size: 2em;
   text-align: center;
   padding: 0 20px 20px;
+  z-index: 2;
+  /* opacity: 0; */
+
 }
 
 blockquote::before {

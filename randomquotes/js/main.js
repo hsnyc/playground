@@ -85,6 +85,8 @@ function replaceQuote(num) {
     var blockQuote = document.querySelector('blockquote');
     var authorP = document.getElementById('author');
 
+    var quoteC = document.getElementById('quote');
+
     //get new quote and author from the quotes object by using a random number
     var quote = quotes[num][0];
     var author = quotes[num][1];
@@ -95,31 +97,29 @@ function replaceQuote(num) {
     //get current element height
     var cHeight = blockQuote.clientHeight;
 
+    var quoteSH = quoteC.clientHeight;
+
+    
+
     //change quote
     blockQuote.innerHTML = quote;
 
     //change author
     authorP.innerHTML = author;
 
-    //remove height from blockquote if it is set
-    blockQuote.style.height = "";
+    //remove height from quote if it is set
+    // blockQuote.style.height = "";
     // blockQuote.style.transition = "height 2s ease-in-out";
     
-    console.log(blockQuote.clientHeight);
+    // console.log(blockQuote.clientHeight);
 
-    //get and set height of blockquote element in order to animate it
-    var bqHeight = blockQuote.clientHeight;
+    //get height of quote element in order to animate it
+    var quoteH = quoteC.clientHeight;
 
-    blockQuote.animate(        
+    quoteC.animate(        
     {
-        height: [cHeight + 'px', bqHeight + 'px']
-    }, 
-    [
-        { opacity: 1 },
-        { opacity: 0 },
-        { opacity: 1 }   
-    ], 600 );
-
-    // blockQuote.style.height = bqHeight;
+        opacity: [0, 1]
+        // height: [quoteSH + 'px', quoteH + 'px']
+    },1000 );
 
 }

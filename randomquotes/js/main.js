@@ -113,7 +113,12 @@ function replaceQuote(num) {
     blockQuote.animate(        
     {
         height: [cHeight + 'px', bqHeight + 'px']
-    }, 600 );
+    }, 
+    [
+        { opacity: 1 },
+        { opacity: 0 },
+        { opacity: 1 }   
+    ], 600 );
 
     // blockQuote.style.height = bqHeight;
 

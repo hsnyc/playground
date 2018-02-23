@@ -96,30 +96,34 @@ function replaceQuote(num) {
 
     //get current element height
     var cHeight = blockQuote.clientHeight;
-
     var quoteSH = quoteC.clientHeight;
-
-    
 
     //change quote
     blockQuote.innerHTML = quote;
 
     //change author
     authorP.innerHTML = author;
-
-    //remove height from quote if it is set
-    // blockQuote.style.height = "";
-    // blockQuote.style.transition = "height 2s ease-in-out";
     
     // console.log(blockQuote.clientHeight);
 
     //get height of quote element in order to animate it
     var quoteH = quoteC.clientHeight;
 
-    quoteC.animate(        
-    {
-        opacity: [0, 1]
-        // height: [quoteSH + 'px', quoteH + 'px']
-    },1000 );
+    quoteC.animate([
+        // keyframes
+        { height: quoteSH + 'px' }, 
+        { height: quoteH + 'px' }
+      ], { 
+        // timing options
+        duration: 200
+      });
 
+    quoteC.animate([
+        // keyframes
+        { opacity: 0 }, 
+        { opacity: 1 }
+      ], { 
+        // timing options
+        duration: 1000
+      });
 }

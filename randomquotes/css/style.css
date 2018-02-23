@@ -81,10 +81,15 @@ button {
   align-items: center;
 }
 
+#quote {
+  text-align: center;
+}
+
 blockquote {
   background-color: antiquewhite;
   font-size: 2em;
   text-align: center;
+  padding: 0 20px 20px;
 }
 
 blockquote::before {

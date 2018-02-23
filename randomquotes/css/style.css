@@ -59,22 +59,22 @@ button {
 .group:after {
   content: "";
   display: table;
-  clear: both; }
+  clear: both;
+}
 
 .outdatedbrowser {
   margin: 0 auto;
   background: #ccc;
   color: #6f83ad;
   padding: 1em;
-  text-align: center; }
+  text-align: center;
+}
   .outdatedbrowser a {
-    color: #dd6f53; }
-
-
+    color: #dd6f53;
+  }
 
 /*==== QUOTES =====*/
 #quotes-wrapper {
-
   max-width: 680px;
   margin: 0 auto;
   display: flex;
@@ -116,7 +116,6 @@ blockquote {
   padding: 0 20px 20px;
   z-index: 2;
   /* opacity: 0; */
-
 }
 
 blockquote::before {
@@ -147,76 +146,4 @@ blockquote::after {
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  /* Styles */ }
-
-@media screen and (min-width: 860px) {
-  .menu ul {
-    text-align: right; }
-  .menu ul li {
-    display: inline-block;
-    padding: 10px 0px; } }
-
-@media screen and (max-width: 860px) {
-  .menu {
-    position: relative; }
-  .menu ul.active {
-    display: none; }
-  .menu ul {
-    width: 100%;
-    position: absolute;
-    top: 120%;
-    left: 0px;
-    padding: 10px 18px;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
-    border-radius: 3px;
-    background: #F9F9F9; }
-  .menu ul:after {
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    top: 0%;
-    left: 90%;
-    content: '';
-    transform: translate(0%, -100%);
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 7px solid #F9F9F9; }
-  .menu li {
-    margin: 5px 0px 5px 0px;
-    float: none;
-    display: block; }
-  .menu a {
-    display: block; }
-  .toggle-nav {
-    padding: 20px;
-    float: right;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
-    border-radius: 3px;
-    background: #F9F9F9;
-    color: #777;
-    font-size: 20px;
-    transition: color linear 0.15s;
-    text-decoration: none; }
-  .toggle-nav:hover, .toggle-nav.active {
-    text-decoration: none;
-    color: #6f83ad; } }
-
-@media only screen and (max-width: 736px) {
-  .logo {
-    display: none; }
-  .mobile-logo {
-    display: block; } }
-
-@media screen and (max-width: 640px) {
-  /* Styles */ }
-
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width: 321px) {
-  /* Styles */ }
-
-/* Smartphones (portrait) ----------- */
-@media only screen and (max-width: 320px) {
-  /* Styles */ }
-
-@media screen and (max-width: 320px) {
   /* Styles */ }

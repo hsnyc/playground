@@ -92,12 +92,29 @@ function replaceQuote(num) {
     // console.log(quote);
     // console.log(author);
 
+    //get current element height
+    var cHeight = blockQuote.clientHeight;
+
     //change quote
     blockQuote.innerHTML = quote;
 
     //change author
     authorP.innerHTML = author;
+
+    //remove height from blockquote if it is set
+    blockQuote.style.height = "";
+    // blockQuote.style.transition = "height 2s ease-in-out";
     
     console.log(blockQuote.clientHeight);
+
+    //get and set height of blockquote element in order to animate it
+    var bqHeight = blockQuote.clientHeight;
+
+    blockQuote.animate(        
+    {
+        height: [cHeight + 'px', bqHeight + 'px']
+    }, 600 );
+
+    // blockQuote.style.height = bqHeight;
 
 }

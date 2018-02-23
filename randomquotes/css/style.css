@@ -82,10 +82,9 @@ button {
 }
 
 blockquote {
-  height: auto;
+  background-color: antiquewhite;
   font-size: 2em;
   text-align: center;
-  transition: height 2s ease-in-out;
 }
 
 blockquote::before {

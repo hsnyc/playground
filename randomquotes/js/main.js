@@ -46,6 +46,18 @@ var quotes = {
     12 : [
             "Nature does not hurry, yet everything is accomplished.",
             "Lao Tzu"
+        ],
+    13 : [
+            "A good traveler has no fixed plans, and is not intent on arriving.",
+            "Lao Tzu"
+        ],
+    14 : [
+            "He who knows, does not speak. He who speaks, does not know.",
+            "Lao Tzu"
+        ],
+    15 : [
+            "The journey of a thousand miles begins with one step.",
+            "Lao Tzu"
         ]
 };
 

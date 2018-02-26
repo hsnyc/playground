@@ -138,8 +138,12 @@ blockquote::after {
   text-decoration: underline;
 }
 
+#share a {
+  display: inline-block;
+}
+
 #share svg {
-  margin: 10px;
+  margin: 5px;
 }
 
 .social-icon:hover {

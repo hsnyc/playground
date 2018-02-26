@@ -144,4 +144,28 @@ function replaceQuote(num) {
         // timing options
         duration: 1000
     });
+
+    //Ok, now lets go to the share function
+    shareQuote(num);
+}
+
+function shareQuote(q) {
+    //get new quote and author from the quotes object by using a random number
+    var quote = quotes[q][0];
+    var author = quotes[q][1];
+
+    //get the anchor tag href attribute
+    var twitterShareIcon = document.getElementById('twitter-icon');
+    var tumblrShareIcon = document.getElementById('tumblr-icon');
+    // console.log(shareIcon);
+    
+    // set the href attr for twitter
+    var twitterShareLink = "https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=" + '"' + quote + '"' + " - " + author;
+    twitterShareIcon.setAttribute('href', twitterShareLink);
+    //console.log(twitterShareIcon.getAttribute('href'));
+
+    // set the href attr for tumblr
+    var tumblrShareLink = "https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=" + author + "&content=" + quote + "&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button";
+    tumblrShareIcon.setAttribute('href', tumblrShareLink);
+    //console.log(tumblrShareIcon.getAttribute('href'));
 }

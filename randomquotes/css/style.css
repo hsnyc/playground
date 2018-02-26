@@ -127,6 +127,26 @@ blockquote::after {
   content: "\201D";
 }
 
+/*==== share icons ====*/
+#share {
+  margin-top: 60px;
+  text-align: center;
+}
+
+#share p {
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+#share svg {
+  margin: 10px;
+}
+
+.social-icon:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
 /*==== FOOTER ====*/
 .footer {
   color: #6f83ad;

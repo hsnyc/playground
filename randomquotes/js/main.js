@@ -115,12 +115,13 @@ function replaceQuote(num) {
 
     //change author
     authorP.innerHTML = author;
-    
-    // console.log(blockQuote.clientHeight);
 
     //get height of quote element in order to animate it
     var quoteH = quoteC.clientHeight;
 
+    // console.log(quoteH);
+
+    //animate the height of quote element - using web animation api
     quoteC.animate([
         // keyframes
         { height: quoteSH + 'px' }, 
@@ -130,6 +131,7 @@ function replaceQuote(num) {
         duration: 200
       });
 
+    //animate the opacity - using web animation api
     quoteC.animate([
         // keyframes
         { opacity: 0 }, 

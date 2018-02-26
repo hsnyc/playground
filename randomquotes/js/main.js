@@ -64,47 +64,53 @@ var quotes = {
 //get button to trigger new quote
 var quoteButton = document.querySelector('button');
 
+//get quote, blockquote and author
+var blockQuote = document.querySelector('blockquote');
+var authorP = document.getElementById('author');
+var quoteC = document.getElementById('quote');
+
+//create random num variable.
+var randomNum = 1;
+
 //create click event
 quoteButton.addEventListener('click', newQuote, false);
+
+//lets get random! function
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
 
 //create new quote function
 function newQuote() {
     //lets do this!
 
-    // console.log();
-
     //get a random number from 1 - (total# of quotes)
     //total# of quotes obtained by using 'Object.keys(quotes).length'
     var totalQuotes = Object.keys(quotes).length;
-    var randomQuote = getRandomInt(1, totalQuotes + 1);
-    
-    //lets get random!
-    function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-      }
 
-    //console.log(randomQuote);
-    // console.log("I am in!");
+    //and assign it to the random number variable.
+    var randomQuote = getRandomInt(1, totalQuotes + 1);
+
+    //lets check for consecutive duplication in random number and 'trip' the wire.
+    while ( randomNum === randomQuote) {
+        // console.log("consecutive duplication!!");
+        randomQuote = getRandomInt(1, totalQuotes + 1);
+    }
+
+    //pass the new ran number to the random number variable to compare on next click.
+    randomNum = randomQuote;
 
     //call 'replace quote' function
-    replaceQuote(randomQuote); 
+    replaceQuote(randomQuote);
 }
 
 function replaceQuote(num) {
-    //get blockquote and author
-    var blockQuote = document.querySelector('blockquote');
-    var authorP = document.getElementById('author');
-
-    var quoteC = document.getElementById('quote');
 
     //get new quote and author from the quotes object by using a random number
     var quote = quotes[num][0];
     var author = quotes[num][1];
-
-    // console.log(quote);
-    // console.log(author);
 
     //get current element height
     var cHeight = blockQuote.clientHeight;
@@ -119,8 +125,6 @@ function replaceQuote(num) {
     //get height of quote element in order to animate it
     var quoteH = quoteC.clientHeight;
 
-    // console.log(quoteH);
-
     //animate the height of quote element - using web animation api
     quoteC.animate([
         // keyframes
@@ -129,7 +133,7 @@ function replaceQuote(num) {
       ], { 
         // timing options
         duration: 200
-      });
+    });
 
     //animate the opacity - using web animation api
     quoteC.animate([
@@ -139,5 +143,5 @@ function replaceQuote(num) {
       ], { 
         // timing options
         duration: 1000
-      });
+    });
 }

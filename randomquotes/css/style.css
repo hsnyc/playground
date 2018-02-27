@@ -75,6 +75,7 @@ button {
 
 /*==== QUOTES =====*/
 #quotes-wrapper {
+  height: 90vh;
   max-width: 680px;
   margin: 0 auto;
   display: flex;
@@ -152,8 +153,12 @@ blockquote::after {
 }
 
 /*==== FOOTER ====*/
+footer {
+  justify-self: baseline;
+}
+
 footer a {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   display: block;
   color: #6f83ad;
   text-align: center;

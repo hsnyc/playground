@@ -152,22 +152,10 @@ blockquote::after {
 }
 
 /*==== FOOTER ====*/
-.footer {
+footer a {
+  margin-top: 20px;
+  display: block;
   color: #6f83ad;
-  background-color: #F9F9F9;
-  grid-column: 1 / -1;
-  /* needed for the floated layout */
-  clear: both; }
-
-/*==== Media Queries ====*/
-/* Large screens ----------- */
-@media only screen and (min-width: 1824px) {
-  /* Styles */ }
-
-/* Desktops and laptops ----------- */
-@media only screen and (min-width: 1224px) {
-  /* Styles */ }
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  /* Styles */ }
+  text-align: center;
+  text-decoration: none;
+}

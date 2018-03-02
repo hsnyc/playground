@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="82px" height="87px" viewBox="0 0 82 87" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>drizzle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons" transform="translate(-220.000000, -114.000000)" fill="#434343">
+            <g id="drizzle" transform="translate(220.000000, 114.000000)">
+                <polygon id="Fill-1" points="5 70.051731 8.95248488 72 13 64.9429633 9.05309671 63"></polygon>
+                <polygon id="Fill-2" points="30 83.0528789 33.949659 85 38 77.9471211 34.050341 76"></polygon>
+                <polygon id="Fill-3" points="29.0558485 60 25 67.0539968 28.9497292 69 33 61.9460032"></polygon>
+                <polygon id="Fill-4" points="66.0502708 78 62 85.0528789 65.9497292 87 70 79.9471211"></polygon>
+                <polygon id="Fill-5" points="44 72.0570367 47.9469033 74 52 66.9429633 48.0475151 65"></polygon>
+                <polygon id="Fill-6" points="67 64.9429346 63.0530967 63 59 70.0517597 62.9524849 72"></polygon>
+                <polygon id="Fill-7" points="15 82.0528789 18.9524849 84 23 76.9471211 19.0475151 75"></polygon>
+                <path d="M62.1167185,17.3470025 C61.3720533,17.3470025 60.6382695,17.3957952 59.9153949,17.4771024 C57.0019111,7.3889814 47.701945,0 36.651217,0 C23.2690619,0 12.4255255,10.8200111 12.4255255,24.1604219 C12.4255255,25.2771163 12.5233606,26.3666389 12.6755608,27.4454621 C5.50623112,28.5242021 0,34.6767971 0,42.1304468 C0,50.3430475 6.67479722,57 14.9097234,57 L62.1226879,57 C73.1023112,57 82,48.1261449 82,37.176242 C82,26.2207882 73.0967453,17.3469331 62.117122,17.3469331" id="Fill-8"></path>
+            </g>
+        </g>
+    </g>
+</svg>

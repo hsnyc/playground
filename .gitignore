@@ -3,3 +3,4 @@
 
 #ignore node_modules dir
 node_modules/
+localweather/js/_notes.js

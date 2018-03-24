@@ -52,17 +52,17 @@ function getWeather(lat, lon) {
             console.log(myJson.weather[0].main); //kelvin
             console.log(myJson.weather[0].description);
             console.log(myJson.weather[0].id);
-            console.log(myJson.main.temp);
             console.log(myJson.name);
             console.log(myJson.sys.country);
+            console.log("Temp(K): " + myJson.main.temp);
             // weatherDiv.innerHTML = JSON.stringify(myJson);
             
             //convert K to F
             var k = Math.floor(myJson.main.temp);
             var fahrenheit = Math.floor(9/5*(k-273)+32);
             var celsius = Math.floor(k - 273.15);
-            console.log(fahrenheit);
-            console.log(celsius);
+            console.log("fahrenheit: " + fahrenheit);
+            console.log("celsius: " + celsius);
 
             //convert K to C
 

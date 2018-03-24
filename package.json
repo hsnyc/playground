@@ -20,4 +20,10 @@
     "gulp-util": "^3.0.8",
     "imagemin-pngcrush": "^5.1.0"
   }
+  // ,
+  // //<-- may enable this in the future -->
+  // "scripts": {
+  //   "preinstall": "npm i -g gulp"
+  // }
+  
 }

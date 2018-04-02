@@ -77,6 +77,11 @@ button {
     color: #dd6f53;
   }
 
+  .message {
+    width: 60%;
+    margin: 40px auto 0;
+  }
+
 #wrapper {
   height: 90vh;
   max-width: 680px;

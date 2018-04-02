@@ -1,7 +1,7 @@
-@import "https://fonts.googleapis.com/css?family=Space+Mono";
-
+@import "https://fonts.googleapis.com/css?family=Nunito+Sans";
+/* https://fonts.googleapis.com/css?family=Space+Mono */
 /*
-    font-family: 'Space Mono', monospace;
+    font-family: 'Nunito Sans', monospace;
     font-style: normal;
 
     Font Weights:
@@ -15,9 +15,10 @@
   box-sizing: border-box; }
 
 body {
-  font-family: "Space Mono", monospace;
+  font-family: "Nunito Sans", monospace;
   color: #65646A;
-  padding: 20px; }
+  /* padding: 20px;  */
+}
 
 h1, h2, h3, h4, h5 {
   font-weight: normal;
@@ -33,32 +34,6 @@ p {
     font-size: 20px;
     line-height: 1.4em;
 }
-
-button {
-    background-color: #6f83ad;
-    border: none;
-    border-radius: 100px;
-    color: #fff;
-    font-weight: 300;
-    font-size: 14px;
-    padding: 10px 26px;
-    transition: opacity 0.5s ease;
-    box-shadow: -1px 1px 2px rgba(101, 100, 106, 0.50);
-  }
-  
-  button:hover {
-    opacity: 0.8;
-    cursor: pointer;
-    /* box-shadow: 0px 0px 4px rgb(85, 85, 88); */
-  }
-
-  button:active {
-    transform: translateY(1px);
-  }
-
-  button:focus {
-    outline: none;
-  }
 
 .group:after {
   content: "";
@@ -78,16 +53,64 @@ button {
   }
 
 #wrapper {
-  height: 90vh;
-  max-width: 680px;
-  margin: 0 auto;
+  height: 95vh;
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
+  align-content: center; 
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/*==== NAV ====*/
+nav {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1 1 100px;
+  padding: 10px 0;
+}
+
+.logo {
+  /* width: 30%; */
+  flex: 1 1 30%;
+  display: inline-block;
+}
+
+.nav-menu {
+  position: relative;
+  flex: 3 1 70%;
+  /* width: 70%; */
+  list-style: none;
+  text-align: right;
+}
+
+.nav-menu li {
+  display: inline-block;
+  padding: 20px;
+}
+
+.nav-menu li:hover {
+  cursor: pointer;
+}
+
+.sub-menu {
+  position: absolute;
+  color: #fff;
+  background-color: #4f5d75;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .50);
+}
+
+.sub-menu li {
+  display: block;
+  text-align: left;
+  padding: 10px;
 }
 
 /*==== FOOTER ====*/
 footer {
+  flex: 0 1 auto;
   justify-self: baseline;
 }
 

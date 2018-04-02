@@ -72,7 +72,9 @@ gulp.task('watch', function() {
 
 gulp.task('connect', function() {
   connect.server({
+    name: 'Playground',
     root: outputDir,
+    port: 8008,
     livereload: true
   });
 });

@@ -128,8 +128,14 @@ nav {
   background-color: #2e4774b9;
 }
 
+.menu-icon {
+  -ms-transition: -ms-transform 400ms cubic-bezier(0.68,-0.08, 0.04, 1.15);
+  transition: transform 400ms cubic-bezier(0.68,-0.08, 0.04, 1.15);
+}
+
 .spin {
-  transform: rotate(.5turn);
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
 }
 
 /*==== FOOTER ====*/

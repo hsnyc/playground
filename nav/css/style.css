@@ -128,6 +128,10 @@ nav {
   background-color: #2e4774b9;
 }
 
+.spin {
+  transform: rotate(.5turn);
+}
+
 /*==== FOOTER ====*/
 footer {
   flex: 0 1 auto;

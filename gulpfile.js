@@ -17,6 +17,7 @@ outputDir = './';
 
 //Js file sources
 jsSources = [
+  'nav/js/*.js',
   'components/scripts/vendor/*.js',
   'components/scripts/*.js'
 ];

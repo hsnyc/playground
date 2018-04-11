@@ -47,8 +47,8 @@ gulp.task('css', function() {
 
 gulp.task('js', function() {
   gulp.src(jsSources)
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest(outputDir + 'js'))
+    // .pipe(concat('main.js'))
+    // .pipe(gulp.dest(outputDir + 'js'))
     .pipe(connect.reload())
 });
 

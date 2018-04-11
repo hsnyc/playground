@@ -10,33 +10,47 @@
     <!-- [if lt IE 10]>
 		<p class="outdatedbrowser">You are using an <strong>outdated</strong> browser. Please <a href="http://outdatedbrowser.com/en">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <section id="wrapper">
+    <div id="wrapper">
         <nav>
             <div class="logo"><img src="http://placehold.it/180x80" alt="main-logo"></div>
             <ul class="nav-menu">
-                <li class="drop-menu">Menu One &nbsp;<img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
-                    <ul id="d1" class="sub-menu">
+                <li class="menu drop-menu">Menu Five &nbsp;<img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
+                    <ul  class="sub-menu">
                         <li>Sub-menu 1</li>
                         <li>Sub-menu 2</li>
                         <li>Sub-menu 3</li>
                     </ul>
                 </li>
-                <li  class="drop-menu">Menu Five &nbsp;<img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
-                    <ul id="d2" class="sub-menu">
+                <li class="menu drop-menu">Menu Four &nbsp;<img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
+                    <ul class="sub-menu">
                         <li>Sub-menu 1</li>
                         <li>Sub-menu 2</li>
                         <li>Sub-menu 3</li>
                     </ul>
                 </li>
-                <li>Menu Three</li>
-                <li>Menu Two</li>
-                
+                <li class="menu">Menu Three</li>
+                <li class="menu">Menu Two</li>
+                <li class="menu drop-menu">Menu One &nbsp;<img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
+                    <ul  class="sub-menu">
+                        <li>Sub-menu 1</li>
+                        <li>Sub-menu 2</li>
+                        <li>Sub-menu 3</li>
+                    </ul>
+                </li>      
             </ul>
         </nav>
+        <section id="main">
+            <script>
+            // to add text here
+            for(var t = 0; t < 20; t++ ) {
+                document.write("<h2>" + (t+1) + ". Hello World!...");
+            }
+            </script>
+        </section>
         <footer>
-            <small><a href="https://hsnyc.co">hsnyc</a></small>
+            <small><a href="#">hsnyc</a></small>
         </footer>
-    </section>
+    </div>
 </body>
 <script src="js/main.js"></script>
 </html>

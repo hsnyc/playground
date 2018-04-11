@@ -53,7 +53,7 @@ p {
   }
 
 #wrapper {
-  height: 95vh;
+  height: auto;
   display: flex;
   flex-flow: column nowrap;
   align-content: center; 

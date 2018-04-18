@@ -17,7 +17,8 @@
 body {
   font-family: "Space Mono", monospace;
   color: #65646A;
-  padding: 20px; }
+  margin: 0;
+}
 
 h1, h2, h3, h4, h5 {
   font-weight: normal;
@@ -83,12 +84,29 @@ button {
   }
 
 #wrapper {
-  height: 90vh;
-  max-width: 680px;
+  /* height: 90vh; */
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-flow: column nowrap;
+}
+
+#wrapper > div {
+  height: 80%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
   align-items: center;
+}
+
+#wrapper > div:nth-child(odd) {
+  background-color: #ccc;
+}
+
+#wrapper > div:nth-child(even) {
+  color: #fff;
+  background-color: rgb(209, 101, 51);
 }
 
 /*==== FOOTER ====*/

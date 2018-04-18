@@ -52,6 +52,10 @@ button {
     /* box-shadow: 0px 0px 4px rgb(85, 85, 88); */
   }
 
+  button:active {
+    transform: translateY(1px);
+  }
+
   button:focus {
     outline: none;
   }
@@ -71,6 +75,11 @@ button {
 }
   .outdatedbrowser a {
     color: #dd6f53;
+  }
+
+  .message {
+    width: 60%;
+    margin: 40px auto 0;
   }
 
 #wrapper {

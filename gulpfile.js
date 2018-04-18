@@ -17,6 +17,7 @@ outputDir = './';
 
 //Js file sources
 jsSources = [
+  'nav/js/*.js',
   'components/scripts/vendor/*.js',
   'components/scripts/*.js'
 ];
@@ -46,8 +47,8 @@ gulp.task('css', function() {
 
 gulp.task('js', function() {
   gulp.src(jsSources)
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest(outputDir + 'js'))
+    // .pipe(concat('main.js'))
+    // .pipe(gulp.dest(outputDir + 'js'))
     .pipe(connect.reload())
 });
 
@@ -72,7 +73,9 @@ gulp.task('watch', function() {
 
 gulp.task('connect', function() {
   connect.server({
+    name: 'Playground',
     root: outputDir,
+    port: 8008,
     livereload: true
   });
 });

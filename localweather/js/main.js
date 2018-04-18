@@ -11,7 +11,7 @@
         return;
     }
 
-    // weatherDiv.innerHTML = "<p>Fetching Weather…</p>";
+    weatherDiv.innerHTML = "<p>Fetching Weather…</p>";
 
     navigator.geolocation.getCurrentPosition(success, error);
 

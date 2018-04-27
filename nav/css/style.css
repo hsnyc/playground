@@ -128,7 +128,7 @@ nav {
 }
 
 .sub-menu li:hover {
-  background-color: #2e4774b9;
+  background-color: #2d4470;
 }
 
 .menu-icon {
@@ -162,8 +162,24 @@ nav {
   transition: transform .3s cubic-bezier(0, .52, 0, 1);
 }
 
-#flyout-menu .mobile-menu {
+.mobile-menu {
+  padding: 0;
   list-style: none;
+}
+
+.mobile-menu li {
+  font-size: 1.8rem;
+  margin: 30px 0;
+}
+
+.mobile-menu li a {
+
+  color: #65646A;
+  text-decoration: none;
+}
+
+.mobile-menu li a:hover {
+  color: rgb(209, 94, 17);
 }
 
 /*==== FOOTER ====*/

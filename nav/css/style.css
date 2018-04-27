@@ -182,6 +182,14 @@ nav {
   color: rgb(209, 94, 17);
 }
 
+.mobile-menu li span {
+  font-size: 1.8rem;
+}
+
+.mobile-menu li span:hover {
+  color: rgb(209, 94, 17);
+}
+
 /*==== FOOTER ====*/
 footer {
   flex: 0 1 auto;

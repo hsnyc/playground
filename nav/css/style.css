@@ -17,6 +17,7 @@
 body {
   font-family: "Nunito Sans", monospace;
   color: #65646A;
+  margin: 0;
   /* padding: 20px;  */
 }
 
@@ -90,7 +91,8 @@ nav {
   padding: 20px;
 }
 
-.nav-menu li:hover {
+.nav-menu li:hover,
+.mobile-menu li:hover {
   cursor: pointer;
 }
 
@@ -142,6 +144,26 @@ nav {
 .show-menu {
   opacity: 1;
   transform: translate(0px, 20px);
+}
+
+/*==== Mobile Menu ====*/
+#flyout-menu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #d0d8dd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* transform: translate3d(100vw, 0, 0); */
+  transition: transform .3s cubic-bezier(0, .52, 0, 1);
+}
+
+#flyout-menu .mobile-menu {
+  list-style: none;
 }
 
 /*==== FOOTER ====*/

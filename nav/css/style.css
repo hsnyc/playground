@@ -157,3 +157,34 @@ footer a {
   text-align: center;
   text-decoration: none;
 }
+
+
+/* ==== MEDIA Queries ==== */
+
+@media only screen  and (min-width : 1045px) {
+    .mobile-menu {
+      display: none;
+    }
+  }
+
+@media only screen  and (max-width : 1045px) {
+  
+  .nav-menu {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: inline-block;
+  }
+
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+  /* Styles */
+}
+  
+/* Smartphones (portrait) ----------- */
+  @media only screen and (max-width : 320px) {
+  /* Styles */
+}

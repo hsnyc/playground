@@ -170,6 +170,7 @@ nav {
 .mobile-menu li {
   font-size: 1.8rem;
   margin: 30px 0;
+  transition: transform 100ms ease-in; 
 }
 
 .mobile-menu li a {
@@ -178,16 +179,23 @@ nav {
   text-decoration: none;
 }
 
+.mobile-menu li:hover {
+  transform: translate(5px, 0);
+}
+
 .mobile-menu li a:hover {
   color: rgb(209, 94, 17);
 }
 
 .mobile-menu li span {
   font-size: 1.8rem;
+  transition: transform 100ms ease-in; 
 }
 
 .mobile-menu li span:hover {
-  color: rgb(209, 94, 17);
+  /* display: inline-block;
+  transform: translate(5px, 0);
+  color: rgb(209, 94, 17); */
 }
 
 /*==== FOOTER ====*/

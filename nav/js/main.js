@@ -49,7 +49,30 @@ function hideMenu(e) {
     e.stopPropagation();
 }
 
-//Mobile Menu ===========================//
+//MOBILE Menu ===========================//
+
+// a quick hover garnish for Nav drop Menu >>
+var mDropMenu = document.querySelectorAll('.m-drop-menu');
+
+//listen for hover
+for (dm of mDropMenu) {
+    dm.addEventListener('mouseover', chgCssOn, false);
+    dm.addEventListener('mouseout', chgCssOff, false);
+}
+
+function chgCssOn(e) {
+    //console.log(e.target.children[0]);
+    e.target.children[0].style.color = "rgb(209, 94, 17)";
+}
+
+function chgCssOff(e) {
+    //console.log(e.target.children[0]);
+    e.target.children[0].style.color = "#65646A";
+}
+// a quick hover garnish for Nav drop Menu END >>
+
+
+//Doing stuff with window size
 
 var intViewportWidth = window.innerWidth;
 

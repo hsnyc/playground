@@ -49,10 +49,12 @@ function hideMenu(e) {
     e.stopPropagation();
 }
 
-//MOBILE Menu ===========================//
+//MOBILE Menu ==========================================================//
 
 // a quick hover garnish for Nav drop Menu >>
 var mDropMenu = document.querySelectorAll('.m-drop-menu');
+//var mDropSpan = document.querySelectorAll('.m-drop-menu span');
+
 
 //listen for hover
 for (dm of mDropMenu) {
@@ -61,13 +63,23 @@ for (dm of mDropMenu) {
 }
 
 function chgCssOn(e) {
-    //console.log(e.target.children[0]);
-    e.target.children[0].style.color = "rgb(209, 94, 17)";
+    //change color only if hovering over the li item.
+    for(mD of mDropMenu) {
+        if(e.target === mD) {
+            e.target.children[0].style.color = "rgb(209, 94, 17)";
+            //console.log("Element equals Li");
+        }
+    }
 }
 
 function chgCssOff(e) {
-    //console.log(e.target.children[0]);
-    e.target.children[0].style.color = "#65646A";
+    //change color only if hovering over the li item.
+    for(mD of mDropMenu) {
+        if(e.target === mD) {
+            e.target.children[0].style.color = "#65646A";
+            //console.log("Element equals Li");
+        }
+    }
 }
 // a quick hover garnish for Nav drop Menu END >>
 

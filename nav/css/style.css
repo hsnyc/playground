@@ -17,6 +17,7 @@
 body {
   font-family: "Nunito Sans", monospace;
   color: #65646A;
+  margin: 0;
   /* padding: 20px;  */
 }
 
@@ -126,7 +127,7 @@ nav {
 }
 
 .sub-menu li:hover {
-  background-color: #2e4774b9;
+  background-color: #2d4470;
 }
 
 .menu-icon {
@@ -144,6 +145,76 @@ nav {
   transform: translate(0px, 20px);
 }
 
+/*==== Mobile Menu ====*/
+#flyout-menu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #d0d8dd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* transform: translate3d(100vw, 0, 0); */
+  transition: transform .3s cubic-bezier(0, .52, 0, 1);
+  overflow: scroll;
+}
+
+.mobile-menu {
+  width: 100vw;
+  text-align: center;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile-menu li {
+  font-size: 1.8rem;
+  margin: 30px 0;
+  
+}
+
+.mobile-menu li a {
+  color: #65646A;
+  text-decoration: none;
+  transition: transform 100ms ease-in; 
+}
+
+.mobile-menu li:hover {
+  cursor: pointer;
+  
+}
+
+.mobile-menu li a:hover {
+  color: rgb(209, 94, 17);
+  display: inline-block;
+  transform: translate(5px, 0);
+}
+
+.mobile-menu li span {
+  font-size: 1.8rem;
+  transition: transform 100ms ease-in; 
+}
+
+.m-sub-menu {
+  padding: 5px 0;
+  list-style: none;
+
+  background-color: #4f5d75;
+}
+
+.m-sub-menu li {
+  margin: 0;
+  padding: 10px;
+
+}
+
+.m-sub-menu li a {
+  font-size: 1.4rem;
+  color: #fff;
+}
+
 /*==== FOOTER ====*/
 footer {
   flex: 0 1 auto;
@@ -156,4 +227,35 @@ footer a {
   color: #6f83ad;
   text-align: center;
   text-decoration: none;
+}
+
+
+/* ==== MEDIA Queries ==== */
+
+@media only screen  and (min-width : 1045px) {
+  #flyout-menu {
+      display: none;
+    }
+  }
+
+@media only screen  and (max-width : 1045px) {
+  
+  .nav-menu {
+    display: none;
+  }
+
+  #flyout-menu {
+    display: inline-block;
+  }
+
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+  /* Styles */
+}
+  
+/* Smartphones (portrait) ----------- */
+  @media only screen and (max-width : 320px) {
+  /* Styles */
 }

@@ -18,38 +18,46 @@
         #slider {
             width: 100%;
             /* height: 350px; */
+            height: 80vh;
             display: flex;
             flex-flow: row nowrap;
             /* transform: translate3d(0, 0, 0); */
+            
         }
         .slide {
-            /* float: left; */
             flex: 1 0 100%;
-            /* width: 550px; */
-            height: 350px;
             white-space: normal;
             background-repeat: no-repeat;
+            z-index: -1; /* <-- enable to place nav links on top of slides */  
         }
         #itemOne {
             background-color: rgb(175, 192, 149);
-            /* background-image: url("//www.kirupa.com/images/blueSquare.png"); */
+            background-image: url("images/benjamin-hung-340383-unsplash.jpg");
+            background-size: cover;
+            background-position: center;
             /* transform: translate3d(0, 0, 0); */
             
         }
         #itemTwo {
             background-color: #FF7F50;
-            background-image: url("//www.kirupa.com/images/yellowSquare.png");
+            background-image: url("images/georgios-kaleadis-1081820-unsplash.jpg");
+            background-size: cover;
+            background-position: center;
             /* transform: translate3d(-100%, 0, 0); */
         }
         #itemThree {
             background-color: #1E90FF;
-            background-image: url("//www.kirupa.com/images/pinkSquare.png");
+            background-image: url("images/oskar-krawczyk-172847-unsplash.jpg");
+            background-size: cover;
+            background-position: center;
             /* transform: translate3d(-200%, 0, 0); */
         }
         #itemFour {
             background-color: #DC143C;
-            background-image: url("//www.kirupa.com/images/graySquare.png");
-            /* transform: translate3d(-300%, 0, 0); */
+            background-image: url("images/redd-angelo-100505-unsplash.jpg");
+            background-size: cover;
+            background-position: center;
+            transform: translate3d(-300%, 0, 0);
         }
 
         /* Nav Links */
@@ -60,7 +68,9 @@
             margin: 0px;
             padding: 0px;
             /* display: inline-block; */
-            margin-top: 6px;
+            /* margin-top: 6px; */
+            margin-top: -40px; /* <-- enable to place nav links on top of slides */
+            z-index: 99;
         }
         
         #navLinks li {
@@ -69,42 +79,34 @@
             margin: 10px;
             list-style: none;
             cursor: pointer;
-            background-color: #CCCCCC;
+            background-color: #FFF;
             padding: 8px;
             border-radius: 50%;
             /* border: black 5px solid; */
         }
 
         #navLinks li:hover {
-            background-color: rgb(226, 104, 23);
+            background-color: rgb(235, 180, 109);
         }
 
         #navLinks li.active {
-            background-color: #333333;
+            background-color:rgb(206, 119, 62);
             color: #FFFFFF;
             outline-width: 7px;
         }
 
         #navLinks li.active:hover {
-            background-color: #484848;
+            background-color:  rgb(255, 102, 0);
             color: #FFFFFF;
         }
     </style>
     <div id="container">
         <!-- Slides -->
         <div id="slider">
-            <div id="itemOne" class="slide">
-        
-            </div>
-            <div id="itemTwo" class="slide">
-            
-            </div>
-            <div id="itemThree" class="slide">
-            
-            </div>
-            <div id="itemFour" class="slide">
-            
-            </div>
+            <div id="itemOne" class="slide"></div>
+            <div id="itemTwo" class="slide"></div>
+            <div id="itemThree" class="slide"></div>
+            <div id="itemFour" class="slide"></div>
         </div>
         <!-- Slide Navigation -->
         <ul id="navLinks">
@@ -113,7 +115,6 @@
             <li class="itemLinks" data-pos="-1100px"></li>
             <li class="itemLinks" data-pos="-1650px"></li>
         </ul>
-
     </div>
 </body>
 </html>

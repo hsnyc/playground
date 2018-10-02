@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <title>Slider</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
 
         #slider {
             width: 100%;
-            height: 350px;
+            /* height: 350px; */
             display: flex;
             flex-flow: row nowrap;
             /* transform: translate3d(0, 0, 0); */
@@ -25,34 +25,73 @@
         .slide {
             /* float: left; */
             flex: 1 0 100%;
-            width: 550px;
+            /* width: 550px; */
             height: 350px;
             white-space: normal;
             background-repeat: no-repeat;
         }
         #itemOne {
-            background-color: #ADFF2F;
-            background-image: url("//www.kirupa.com/images/blueSquare.png");
-            transform: translate3d(0, 0, 0);
+            background-color: rgb(175, 192, 149);
+            /* background-image: url("//www.kirupa.com/images/blueSquare.png"); */
+            /* transform: translate3d(0, 0, 0); */
             
         }
         #itemTwo {
             background-color: #FF7F50;
             background-image: url("//www.kirupa.com/images/yellowSquare.png");
-            transform: translate3d(-100%, 0, 0);
+            /* transform: translate3d(-100%, 0, 0); */
         }
         #itemThree {
             background-color: #1E90FF;
             background-image: url("//www.kirupa.com/images/pinkSquare.png");
-            transform: translate3d(-200%, 0, 0);
+            /* transform: translate3d(-200%, 0, 0); */
         }
         #itemFour {
             background-color: #DC143C;
             background-image: url("//www.kirupa.com/images/graySquare.png");
-            transform: translate3d(-300%, 0, 0);
+            /* transform: translate3d(-300%, 0, 0); */
+        }
+
+        /* Nav Links */
+        #navLinks {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            margin: 0px;
+            padding: 0px;
+            /* display: inline-block; */
+            margin-top: 6px;
+        }
+        
+        #navLinks li {
+            /* float: left; */
+            /* text-align: center; */
+            margin: 10px;
+            list-style: none;
+            cursor: pointer;
+            background-color: #CCCCCC;
+            padding: 8px;
+            border-radius: 50%;
+            /* border: black 5px solid; */
+        }
+
+        #navLinks li:hover {
+            background-color: rgb(226, 104, 23);
+        }
+
+        #navLinks li.active {
+            background-color: #333333;
+            color: #FFFFFF;
+            outline-width: 7px;
+        }
+
+        #navLinks li.active:hover {
+            background-color: #484848;
+            color: #FFFFFF;
         }
     </style>
     <div id="container">
+        <!-- Slides -->
         <div id="slider">
             <div id="itemOne" class="slide">
         
@@ -67,6 +106,14 @@
             
             </div>
         </div>
+        <!-- Slide Navigation -->
+        <ul id="navLinks">
+            <li class="itemLinks" data-pos="0px"></li>
+            <li class="itemLinks" data-pos="-550px"></li>
+            <li class="itemLinks" data-pos="-1100px"></li>
+            <li class="itemLinks" data-pos="-1650px"></li>
+        </ul>
+
     </div>
 </body>
 </html>

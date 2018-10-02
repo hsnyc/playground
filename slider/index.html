@@ -21,6 +21,7 @@
             height: 80vh;
             display: flex;
             flex-flow: row nowrap;
+            transition: transform .5s ease-in-out;
             /* transform: translate3d(0, 0, 0); */
         }
         .slide {
@@ -103,11 +104,66 @@
         </div>
         <!-- Slide Navigation -->
         <ul id="navLinks">
-            <li class="itemLinks" data-pos="0px"></li>
-            <li class="itemLinks" data-pos="-550px"></li>
-            <li class="itemLinks" data-pos="-1100px"></li>
-            <li class="itemLinks" data-pos="-1650px"></li>
+            <li class="itemLinks"></li>
+            <li class="itemLinks"></li>
+            <li class="itemLinks"></li>
+            <li class="itemLinks"></li>
         </ul>
     </div>
+
+    <script>
+        // getting the navigation links and the slider wrapper
+        var links = document.querySelectorAll(".itemLinks");
+        var slider = document.querySelector("#slider");
+        
+        // the activeLink provides a pointer to the currently displayed item
+        var activeLink = 0;
+
+        // setup the event listeners
+        for (var i = 0; i < links.length; i++) {
+            var link = links[i];
+            link.addEventListener('click', setClickedItem, false);
+        
+            // to identify the item for the activeLink
+            link.itemID = i;
+        }
+
+        // set first item as active
+        links[activeLink].classList.add("active");
+        
+        function setClickedItem(e) {
+            removeActiveLinks();
+        
+            var clickedLink = e.target;
+            activeLink = clickedLink.itemID;
+
+            // console.log("item clickedLink ID: " + clickedLink.itemID);
+        
+            changePosition(clickedLink);
+            // console.log(clickedLink);
+        }
+
+        function removeActiveLinks() {
+                for (var i = 0; i < links.length; i++) {
+                links[i].classList.remove("active");
+            }
+        }
+        
+        // Handle changing the slider position as well as ensure
+        // the correct link is highlighted as being active
+        function changePosition(link) {
+
+            var position = link.itemID * -100 + "%";
+            // console.log(position);
+
+            var translateValue = "translate3d(" + position + ", 0, 0)";
+            slider.style.transform = translateValue;
+            slider.style.zIndex = -1;
+        
+            link.classList.add("active");
+        }
+    
+    </script>
+
 </body>
 </html>

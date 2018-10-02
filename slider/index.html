@@ -22,7 +22,6 @@
             display: flex;
             flex-flow: row nowrap;
             transition: transform .5s ease-in-out;
-            /* transform: translate3d(0, 0, 0); */
         }
         .slide {
             flex: 1 0 100%;
@@ -30,7 +29,6 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            z-index: -1; /* <-- enable to place nav links on top of slides */  
         }
         #itemOne {
             background-color: rgb(175, 192, 149);
@@ -61,22 +59,19 @@
             justify-content: center;
             margin: 0px;
             padding: 0px;
+            /* enable/disable below styles to place nav links on top of slides */
             /* margin-top: 6px; */
-            /* enable below styles to place nav links on top of slides */
             margin-top: -40px; 
-            z-index: 99;
         }
         
         #navLinks li {
-            /* float: left; */
-            /* text-align: center; */
             margin: 10px;
             list-style: none;
             cursor: pointer;
             background-color: rgb(224, 224, 224);
             padding: 8px;
             border-radius: 50%;
-            /* border: black 5px solid; */
+            z-index: 99; /* <-- to place nav links on top of slides   */
         }
 
         #navLinks li:hover {
@@ -123,7 +118,7 @@
         for (var i = 0; i < links.length; i++) {
             var link = links[i];
             link.addEventListener('click', setClickedItem, false);
-        
+
             // to identify the item for the activeLink
             link.itemID = i;
         }
@@ -159,12 +154,13 @@
 
             var translateValue = "translate3d(" + position + ", 0, 0)";
             slider.style.transform = translateValue;
-            slider.style.zIndex = -1;
+            // link.style.zIndex = 1;
+            // slider.style.zIndex = -1;
         
             link.classList.add("active");
         }
 
-        // Slide the content automatically
+        // Slide the content automatically ---->
         var timeoutID;
         
         function startTimer() {

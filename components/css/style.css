@@ -23,11 +23,27 @@ h1, h2, h3, h4, h5 {
   font-weight: normal; 
 }
 
+h1 {
+  display: inline-block;
+}
+
 p {
   font-style: normal;
   font-weight: 300;
   font-size: 20px;
   line-height: 1.4em; 
+}
+
+input {
+  display: inline-block;
+  height: 40px;
+  box-shadow: none;
+  border-width: 0;
+  border-bottom-width: 1px;
+  font-size: 1em;
+  font-family: "Space Mono", monospace;
+  color: #65646A;
+  /* border-style: none; */
 }
 
 /*=== Layout ====*/

@@ -96,6 +96,12 @@ button:hover {
   height: 200px;
   margin: 10px;
   background-color: #6f83ad;
+  cursor: pointer;
+  transition: opacity .2s ease-out;
+}
+
+.box:hover {
+  opacity: .8;
 }
 
 /*==== Utilities ====*/
@@ -117,7 +123,7 @@ button:hover {
   color: #dd6f53; 
 }
 
-/*==== FOOTER ====*/
+/*==== Footer ====*/
 .footer {
   color: #6f83ad;
   background-color: #F9F9F9;

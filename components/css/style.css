@@ -16,9 +16,9 @@ html {
 body {
   font-family: "Space Mono", monospace;
   color: #65646A;
-  padding: 20px; 
+  margin: 0;
 }
-
+/*==== Atoms ====*/
 h1, h2, h3, h4, h5 {
   font-weight: normal; 
 }
@@ -30,6 +30,22 @@ p {
   line-height: 1.4em; 
 }
 
+/*=== Layout ====*/
+header {
+  padding: 20px;
+}
+
+section {
+  background-color: #F9F9F9; 
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/*==== Molecules ====*/
 button {
   background-color: #6f83ad;
   border: none;
@@ -46,16 +62,7 @@ button:hover {
   opacity: 0.8; 
 }
 
-.container {
-  width: 80%;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-section {
-  background-color: #F9F9F9; 
-}
-
+/*==== Utilities ====*/
 .group:after {
   content: "";
   display: table;

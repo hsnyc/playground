@@ -1,14 +1,35 @@
 
 //Insert name into heading
-var name = prompt("Hi. What is your name?", "Joe");
+// var name = prompt("Hi. What is your name?", "Joe");
 
-var heading = document.querySelector('.main-title');
+let theName = document.getElementById('name');
+let myName = "Henry";
 
-if(name !== "null" && name) {
-   heading.innerHTML = "Hello " + name + "."; 
-} else {
-    heading.innerHTML = "Hello.";
-}
+//clear input if previously filled
+theName.value = "";
+
+theName.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        
+        myName = theName.value;
+        // console.log(myName);
+        
+        //get main title (H1) and insert the name
+        var heading = document.querySelector('.main-title');
+        
+        if(myName && myName !== "null") {
+            heading.innerHTML = "Hello " + myName + ".";
+            
+            //hide the input
+            theName.style.display = 'none';
+        } else {
+            heading.innerHTML = "Hello.";
+        }
+    }
+},false);
+
+
 
 //Console Hello 'name'
 var greeting = function hello(th) {
@@ -16,4 +37,4 @@ var greeting = function hello(th) {
     console.log('Hello ' + th);
 };
 
-greeting(name);
+greeting(myName);

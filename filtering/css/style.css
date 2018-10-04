@@ -66,6 +66,44 @@ button:hover {
   opacity: 0.8; 
 }
 
+/*==== Nav Links ====*/
+.nav-links {
+  list-style: none;
+  text-align: center;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.nav-links li:hover {
+  text-shadow: 1px 1px 0.5px #c6c6c7c7;
+}
+
+/*==== Sections ====*/
+.boxes {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  background-color: #6f83ad;
+  cursor: pointer;
+  transition: opacity .2s ease-out;
+}
+
+.box:hover {
+  opacity: .8;
+}
+
 /*==== Utilities ====*/
 .group:after {
   content: "";
@@ -85,7 +123,7 @@ button:hover {
   color: #dd6f53; 
 }
 
-/*==== FOOTER ====*/
+/*==== Footer ====*/
 .footer {
   color: #6f83ad;
   background-color: #F9F9F9;

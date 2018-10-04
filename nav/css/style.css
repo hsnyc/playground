@@ -53,22 +53,19 @@ p {
     color: #dd6f53;
   }
 
-#wrapper {
-  height: auto;
-  display: flex;
-  flex-flow: column nowrap;
-  align-content: center; 
+#main {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
-
 
 /*==== NAV ====*/
 /*==== HEADER ====*/
 nav {
   display: flex;
   flex-flow: row nowrap;
-  padding: 10px 0;
+  padding: 20px;
   align-items: center;
   /* Smoother animations */ 
 }
@@ -287,7 +284,7 @@ nav *:after {
   }
 
   nav {
-    padding: 10px 0;
+    padding: 10px;
     align-items: center;
   }
 

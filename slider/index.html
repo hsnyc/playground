@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Slider</title>
+</head>
+<body>
+    <style>
+        #container {
+            width: 80%;
+            margin: 40px auto;
+            overflow: hidden;
+        }
+
+        #slider {
+            width: 100%;
+            /* height: 350px; */
+            height: 80vh;
+            display: flex;
+            flex-flow: row nowrap;
+            transition: transform .5s ease-in-out;
+        }
+        .slide {
+            flex: 1 0 100%;
+            white-space: normal;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        #itemOne {
+            background-color: rgb(175, 192, 149);
+            background-image: url("images/benjamin-hung-340383-unsplash.jpg");
+            /* transform: translate3d(0, 0, 0); */
+            
+        }
+        #itemTwo {
+            background-color: #FF7F50;
+            background-image: url("images/georgios-kaleadis-1081820-unsplash.jpg");
+            /* transform: translate3d(-100%, 0, 0); */
+        }
+        #itemThree {
+            background-color: #1E90FF;
+            background-image: url("images/oskar-krawczyk-172847-unsplash.jpg");
+            /* transform: translate3d(-200%, 0, 0); */
+        }
+        #itemFour {
+            background-color: #DC143C;
+            background-image: url("images/redd-angelo-100505-unsplash.jpg");
+            /* transform: translate3d(-300%, 0, 0); */
+        }
+
+        /* Nav Links */
+        #navLinks {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            margin: 0px;
+            padding: 0px;
+            /* enable/disable below styles to place nav links on top of slides */
+            /* margin-top: 6px; */
+            margin-top: -40px; 
+        }
+        
+        #navLinks li {
+            margin: 10px;
+            list-style: none;
+            cursor: pointer;
+            background-color: rgb(224, 224, 224);
+            padding: 8px;
+            border-radius: 50%;
+            z-index: 99; /* <-- to place nav links on top of slides   */
+        }
+
+        #navLinks li:hover {
+            background-color: rgb(247, 178, 89);
+        }
+
+        #navLinks li.active {
+            background-color:rgb(206, 119, 62);
+            /* color: #FFFFFF; */
+            /* outline-width: 7px; */
+        }
+
+        #navLinks li.active:hover {
+            background-color:  rgb(255, 102, 0);
+            /* color: #FFFFFF; */
+        }
+    </style>
+    <div id="container">
+        <!-- Slides -->
+        <div id="slider">
+            <div id="itemOne" class="slide"></div>
+            <div id="itemTwo" class="slide"></div>
+            <div id="itemThree" class="slide"></div>
+            <div id="itemFour" class="slide"></div>
+        </div>
+        <!-- Slide Navigation -->
+        <ul id="navLinks">
+            <li class="itemLinks"></li>
+            <li class="itemLinks"></li>
+            <li class="itemLinks"></li>
+            <li class="itemLinks"></li>
+        </ul>
+    </div>
+
+    <script>
+        
+        // <---- Slider ---->
+        // getting the navigation links and the slider wrapper
+        var links = document.querySelectorAll(".itemLinks");
+        var slider = document.querySelector("#slider");
+        
+        // the activeLink provides a pointer to the currently displayed item
+        var activeLink = 0;
+
+        // setup the click event listeners for nav links
+        for (var i = 0; i < links.length; i++) {
+            var link = links[i];
+            //click event listener
+            link.addEventListener('click', setClickedItem, false);
+
+            // to identify the item for the activeLink
+            link.itemID = i;
+        }
+
+        // set first item as active
+        links[activeLink].classList.add("active");
+
+        function setClickedItem(e) {
+            removeActiveLinks();
+            resetTimer();
+        
+            var clickedLink = e.target;
+            activeLink = clickedLink.itemID;
+        
+            changePosition(clickedLink);
+            // console.log(clickedLink);
+        }
+
+        function removeActiveLinks() {
+                for (var i = 0; i < links.length; i++) {
+                links[i].classList.remove("active");
+            }
+        }
+        
+        // Handle changing the slider position as well as ensure
+        // the correct link is highlighted as being active
+        function changePosition(link) {
+
+            var position = link.itemID * -100 + "%";
+            // console.log(position);
+
+            var translateValue = "translate3d(" + position + ", 0, 0)";
+            slider.style.transform = translateValue;
+        
+            link.classList.add("active");
+        }
+        // <---- Slider End ---->
+
+        // <---- Slider: Pause on Hover | comment out if not desired ---->
+        var slides = document.querySelectorAll(".slide");
+
+        // set event listeners for pausing/resuming slider on hover in/out
+        for (var i = 0; i < slides.length; i++) {
+            var slide = slides[i];
+            //mouseover and out events for each slide
+            slide.addEventListener('mouseover', function(){window.clearInterval(timeoutID);}, false);
+            slide.addEventListener('mouseout', function(){startTimer();}, false);
+        }
+        // <---- Slider: Pause on Hover End ---->
+
+        // <---- Slider: Slide the content automatically ---->
+        // Comment out if not desired. if not using, remove resetTimer() function from the setClickedItem() function 
+        var timeoutID;
+        
+        function startTimer() {
+            // wait 8 seconds before calling goInactive
+            timeoutID = window.setInterval(goToNextItem, 8000);
+        }
+        
+        function resetTimer() {
+            window.clearInterval(timeoutID);
+            startTimer();
+        }
+        
+        function goToNextItem() {
+            removeActiveLinks();
+        
+            if (activeLink < links.length - 1) {
+                activeLink++;
+            } else {
+                activeLink = 0;
+            }
+        
+            var newLink = links[activeLink];
+            changePosition(newLink);
+        }
+
+        startTimer();
+        // <---- Slider: Slide the content automatically end ---->
+    </script>
+
+</body>
+</html>

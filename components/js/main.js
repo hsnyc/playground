@@ -3,6 +3,7 @@
 var name = prompt("Hi. What is your name?", "Joe");
 
 var heading = document.querySelector('.main-title');
+
 if(name !== "null" && name) {
    heading.innerHTML = "Hello " + name + "."; 
 } else {

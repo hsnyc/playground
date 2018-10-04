@@ -1,0 +1,106 @@
+ /*
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+*/
+
+@import "https://fonts.googleapis.com/css?family=Space+Mono";
+
+html {
+  font-family: sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  color: #65646A;
+  margin: 0;
+}
+/*==== Atoms ====*/
+h1, h2, h3, h4, h5 {
+  font-weight: normal; 
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.4em; 
+}
+
+/*=== Layout ====*/
+header {
+  padding: 20px;
+}
+
+section {
+  background-color: #F9F9F9; 
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/*==== Molecules ====*/
+button {
+  background-color: #6f83ad;
+  border: none;
+  border-radius: 100px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 15px 46px;
+  transition: opacity 0.5s ease; 
+}
+  
+button:hover {
+  opacity: 0.8; 
+}
+
+/*==== Utilities ====*/
+.group:after {
+  content: "";
+  display: table;
+  clear: both; 
+}
+
+.outdatedbrowser {
+  margin: 0 auto;
+  background: #ccc;
+  color: #6f83ad;
+  padding: 1em;
+  text-align: center; 
+}
+
+.outdatedbrowser a {
+  color: #dd6f53; 
+}
+
+/*==== FOOTER ====*/
+.footer {
+  color: #6f83ad;
+  background-color: #F9F9F9;
+}
+
+/*==== Media Queries ====*/
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */ }
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */ }
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  /* Styles */ }
+

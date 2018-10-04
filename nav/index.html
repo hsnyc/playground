@@ -8,44 +8,37 @@
 </head>
 <body>
     <!-- [if lt IE 10]>
-		<p class="outdatedbrowser">You are using an <strong>outdated</strong> browser. Please <a href="http://outdatedbrowser.com/en">upgrade your browser</a> to improve your experience.</p>
+    <p class="outdatedbrowser">You are using an <strong>outdated</strong> browser. Please <a href="http://outdatedbrowser.com/en">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <!-- Mobile Menu -->
-    <div id="flyout-menu">
-        <ul class="mobile-menu">
-            <li class="m-menu"><a href="#">Menu Five</a></li>
-            <li class="m-menu m-drop-menu">Menu Four <span>&raquo;</span>
-                <ul class="m-sub-menu">
-                    <li><a href="#">Sub-menu 1</a></li>
-                    <li><a href="#">Sub-menu 2</a></li>
-                    <li><a href="#">Sub-menu 3</a></li>
-                </ul>
-            </li>
-            <li class="m-menu"><a href="#">Menu Three</a></li>
-            <li class="m-menu"><a href="#">Menu Two</a></li>
-            <li class="m-menu m-drop-menu">Menu One <span>&raquo;</span>
-                <ul class="m-sub-menu">
-                    <li><a href="#">Sub-menu 1</a></li>
-                    <li><a href="#">Sub-menu 2</a></li>
-                    <li><a href="#">Sub-menu 3</a></li>
-                </ul>
-            </li>      
-        </ul>
+    <div id="btt-icon">
+        <div id="btt-arrow"></div>
     </div>
 
-    <div id="wrapper">
-        <nav>
-            <div class="logo"><img src="http://placehold.it/180x80" alt="main-logo"></div>
-            <ul class="nav-menu">
-                <li class="menu drop-menu">Menu Five &nbsp;<img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
-                    <ul  class="sub-menu">
+    <header>
+        <nav class="wrapper">
+            <div class="logo">
+                <img src="http://placehold.it/180x80" width="180" height="80" alt="main-logo">
+            </div>
+
+            <!-- flyout menu button -->		
+            <button id="roundButton" class="navicon-button rarr">
+                <div class="navicon"></div>
+            </button>
+
+            <!-- Main Nav -->
+            <ul id="nav-menu" class="nav-menu">	
+                <li class="menu drop-menu">Menu Five &nbsp;
+                    <img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
+                    <ul class="sub-menu">
                         <li>Sub-menu 1</li>
                         <li>Sub-menu 2</li>
                         <li>Sub-menu 3</li>
+                        <li>Sub-menu 4</li>
+                        <li>Sub-menu 5</li>
                     </ul>
                 </li>
-                <li class="menu drop-menu">Menu Four &nbsp;<img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
+                <li class="menu drop-menu">Menu Four &nbsp;
+                    <img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
                     <ul class="sub-menu">
                         <li>Sub-menu 1</li>
                         <li>Sub-menu 2</li>
@@ -54,28 +47,48 @@
                 </li>
                 <li class="menu">Menu Three</li>
                 <li class="menu">Menu Two</li>
-                <li class="menu drop-menu">Menu One &nbsp;<img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
-                    <ul  class="sub-menu">
+                <li class="menu drop-menu">Menu One &nbsp;
+                    <img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
+                    <ul class="sub-menu">
                         <li>Sub-menu 1</li>
                         <li>Sub-menu 2</li>
                         <li>Sub-menu 3</li>
                     </ul>
-                </li>      
+                </li>
             </ul>
-
         </nav>
-        <section id="main">
-            <script>
-            // to add text here
-            for(var t = 0; t < 20; t++ ) {
-                document.write("<h2>" + (t+1) + ". Hello World!...");
-            }
-            </script>
-        </section>
-        <footer>
-            <small><a href="#">hsnyc</a></small>
-        </footer>
-    </div>
+
+        <!-- <div class="header-wrap group">
+            <div class="header-logo">
+                <img class="logo"src="images/healthesystems-logo_TM_216x64_2x.png" alt="healthesystems logo" width="216">
+                <img class="mobile-logo" src="images/hes-e-logo_125x_2x.png" alt="healthesystems logo mobile" width="62">
+            </div>
+            <nav class="menu">
+                <ul class="active">
+                    <li class="current-item"><a href="https://www.healthesystems.com/about">about</a></li>
+                    <li><a href="https://www.healthesystems.com/solutions-services">solutions &amp; services</a></li>
+                    <li><a href="https://www.healthesystems.com/resources-tools">resources &amp; tools</a></li>
+                    <li><a href="https://www.healthesystems.com/news">news</a></li>
+                </ul>
+                <a class="toggle-nav" href="#">&#9776;</a>
+            </nav>
+        </div> -->
+
+
+    </header>
+
+    <section id="main">
+        <script>
+        // to add text here
+        for(var t = 0; t < 20; t++ ) {
+            document.write("<h2>" + (t+1) + ". Hello World!...");
+        }
+        </script>
+    </section>
+    <footer>
+        <small><a href="#">hsnyc</a></small>
+    </footer>
+
 </body>
 <script src="js/main.js"></script>
 </html>

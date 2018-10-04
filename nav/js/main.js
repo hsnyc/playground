@@ -120,34 +120,3 @@ function showMenu(e) {
     e.stopPropagation();
 }
 
-
-//Doing stuff with window size
-
-// var intViewportWidth = window.innerWidth;
-
-//Conditionally load a script when screen width is certain size.
-// if (screen.width > 1046) {
-//     console.log("Screen Less than 1046px");
-    // download complicated script
-    // swap in full-source images for low-source ones
-// }
-
-// if(intViewportWidth > 1046) {
-//     console.log("InnerWindow greater than 1046px");
-//     window.addEventListener("resize", buildMobileNav);
-// } else {
-//     // TODO: something to copy existing nav to Mobile.
-//     console.log("Copy Nav");
-// }
-
-// function buildMobileNav () {
-//     intViewportWidth = window.innerWidth;
-//     console.log(intViewportWidth);
-//     //console.log("screen = " + screen.width);
-//     if (intViewportWidth < 1046) {
-//         console.log("InnerWindow Less than 1046px");
-//         window.removeEventListener("resize", buildMobileNav);
-//    }
-
-// }
-

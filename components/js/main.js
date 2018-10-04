@@ -8,6 +8,7 @@ let myName = "Henry";
 //clear input if previously filled
 theName.value = "";
 
+//get value when the ENTER Key is pressed on the input.
 theName.addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.keyCode === 13) {
@@ -23,6 +24,7 @@ theName.addEventListener("keyup", function(event) {
             
             //hide the input
             theName.style.display = 'none';
+            
         } else {
             heading.innerHTML = "Hello.";
         }

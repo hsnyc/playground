@@ -89,19 +89,29 @@ button:hover {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  /* align-content: space-around; */
 }
 
 .box {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
   width: 200px;
   height: 200px;
   margin: 10px;
+  color: #ccc;
   background-color: #6f83ad;
   cursor: pointer;
-  transition: opacity .2s ease-out;
-}
+  overflow: hidden;
+  transition: opacity .4s ease-out;
+              /* height .4s ease-out,
+              width .4s ease-out,
+              visibility 1s ease-out;   */
+}    
 
 .box:hover {
-  opacity: .8;
+  opacity: .8 !important;
 }
 
 /*==== Utilities ====*/

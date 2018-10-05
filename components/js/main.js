@@ -40,3 +40,95 @@ var greeting = function hello(th) {
 };
 
 greeting(myName);
+
+
+
+//====================================================
+//JavaScript Tests & Ramdon Code
+//====================================================
+
+//Sample 1
+function doHomework(subject) {
+    // alert(`Starting my ${subject} homework.`);
+    someCallback();
+}
+
+function someCallback() {
+    // console.log('I am the call back!!');
+}
+
+doHomework('Science');
+
+//Sample 2
+function doHomework(subject) {
+    // alert(`Starting my ${subject} homework.`);
+    someCallback();
+}
+
+function someCallback() {
+    // console.log('I am the call back!!');
+}
+
+doHomework('Science');
+
+//Reduce
+let data = [
+    {
+      country: 'China',
+      pop: 50,
+    },
+    {
+      country: 'India',
+      pop: 20,
+    },
+    {
+      country: 'USA',
+      pop: 10,
+    },
+    {
+      country: 'Indonesia',
+      pop: 6,
+    }
+  ]
+
+  let newData = data.reduce((acc,v) => {
+    return v.country == 'China' ? acc : acc + v.pop; 
+  },0);
+
+  console.log(newData); //36
+
+  //Chaining map + filer + reduce
+  data = [
+    {
+      name: 'Butters',
+      age: 3,
+      type: 'dog'
+    },
+    {
+      name: 'Lizzy',
+      age: 6,
+      type: 'dog'
+    },
+    {
+      name: 'Red',
+      age: 1,
+      type: 'cat'
+    },
+    {
+      name: 'Joey',
+      age: 3,
+      type: 'dog'
+    },
+  ];
+
+
+var ages = data.filter((animal) => {
+    return animal.type === 'dog';
+}).map((animal) => {
+    return animal.age * 7;
+}).reduce((sum, age) => {
+    return sum + age;
+});
+
+console.log(ages);
+// ages = 84 

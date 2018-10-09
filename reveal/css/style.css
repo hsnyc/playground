@@ -18,6 +18,7 @@ body {
   color: #65646A;
   margin: 0;
 }
+
 /*==== Atoms ====*/
 h1, h2, h3, h4, h5 {
   font-weight: normal; 
@@ -65,6 +66,57 @@ button {
   
 button:hover {
   opacity: 0.8; 
+}
+
+.reveal.more,
+.reveal.less {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 20px;
+  /* text-align: center; */
+}
+
+.reveal.more p,
+.reveal.less p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.reveal.more p:hover,
+.reveal.less p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.triangle-up {
+  width: 0px;
+  height: 0px;
+  border: 10px solid #dd6f53;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  cursor: pointer;
+  transition: transform 50ms ease-in;
+}
+
+.triangle-down {
+  width: 0px;
+  height: 0px;
+  border: 10px solid #dd6f53;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  cursor: pointer;
+  transition: transform 50ms ease-in;
+}
+
+.triangle-up:hover {
+  transform: scale(1.2) translateY(-2px);
+}
+
+.triangle-down:hover {
+  transform: scale(1.2) translateY(2px);
 }
 
 /*==== Nav Links ====*/

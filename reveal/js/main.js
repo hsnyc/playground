@@ -1,51 +1,48 @@
-//<==== Filtering ====>
+//<==== Hovering ====>
 
-//get items into an array
-var boxes = document.querySelectorAll('.box');
+//get the childs of .reveal divs
+var revealChild = document.querySelectorAll('.reveal');
+// console.log(revealChild);
 
-//get categories attribute
-var catArr;
-for(let c of boxes) {
-    catArr = c.getAttribute('category');
+for(let child of revealChild) {
+    // console.log(child.children);
 }
 
-//get nav links.
-var navLinks = document.querySelectorAll('.link');
+for(let i = 0; i < revealChild.length; i++) {
 
-//add click event to each link to get attribute value.
-var l = 0;
-for(let nav of navLinks) {
-    nav.addEventListener("click",filterBoxes,false);
-    //nav.linkID = l++; //to identify the link that was clicked on.
+    let child = revealChild[i].children;
+
+    for(let c of child) {
+        // console.log(c);
+        c.addEventListener("click", toggleReveal, false);
+    }
 }
 
-//<==== Functions ====>
-
-function filterBoxes(e) {
-    //grab the link-prop attribute 
-    let linkProp = e.target.getAttribute('link-prop');
-    //console.log("Link Prop is: " + linkProp);
-
-    //reset boxes
-    for(let b of boxes) {
-        b.style.opacity = '1';
-    }
-
-    let boxSet = [];
-
-    for(let i = 0; i < boxes.length; i++) {
-        //check for all and for the linkProp
-        if(linkProp !== 'all' && linkProp !== boxes[i].getAttribute('category')){
-            boxSet.push(boxes[i]);
-        };
-    }
-
-    for(let b of boxSet) {
-        b.style.opacity = '0.2';
-    }
-
-    //console.log(boxSet);
+function toggleReveal() {
+    console.log('Do the Reveal');
 }
+
+//experimenting with some silly hover for the triangle
+// function hoverEffect(e){
+//     console.log(e.target.className);
+    
+//     let eClass = e.target.className;
+//     switch (eClass) {
+
+//         case "less":
+//             document.querySelector('.triangle-up').style.transform = "scale(1.2) translateY(-2px)";
+//             break;
+
+//         case "more":
+//             document.querySelector('.triangle-down').style.transform = "scale(1.2) translateY(2px)";
+//             break;
+
+//         default:
+//             //some default here
+//     }
+// }
+
+
 
 
 

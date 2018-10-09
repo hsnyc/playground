@@ -73,7 +73,7 @@ section {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  padding: 20px;
+  /* padding: 10px 0; */
   /* text-align: center; */
 }
 
@@ -87,6 +87,10 @@ section {
 .reveal.less p:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.reveal.less {
+  display: none;
 }
 
 .triangle-up {
@@ -138,11 +142,14 @@ section {
 /*==== Sections ====*/
 .boxes {
   width: 100%;
+  height: 450px;
   max-width: 928px;
   margin: 0 auto;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  overflow: hidden;
+  transition: height 400ms ease-out;
   /* align-content: space-around; */
 }
 

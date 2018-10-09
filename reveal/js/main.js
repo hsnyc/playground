@@ -1,16 +1,17 @@
-//<==== Hovering ====>
+//<==== Reveal ====>
 
-//get the childs of .reveal divs
-var revealChild = document.querySelectorAll('.reveal');
-// console.log(revealChild);
+//get the reveal divs
+var reveal = document.querySelectorAll('.reveal');
 
-for(let child of revealChild) {
-    // console.log(child.children);
-}
+// get boxes container
+var boxes = document.querySelector('.boxes');
 
-for(let i = 0; i < revealChild.length; i++) {
+// console.log(reveal);
 
-    let child = revealChild[i].children;
+//add click event to each of the reveal children
+for(let i = 0; i < reveal.length; i++) {
+
+    let child = reveal[i].children;
 
     for(let c of child) {
         // console.log(c);
@@ -18,33 +19,50 @@ for(let i = 0; i < revealChild.length; i++) {
     }
 }
 
+//this function handles the reveal toggle action.
 function toggleReveal(e){
-    // console.log(e.target.className);
     
+    //to hold the class of the div
     let eClass = e.target.className;
+
+    //get the scroll height of the boxes container
+    const boxHeight = boxes.scrollHeight;
+
     switch (eClass) {
 
-        case "less":
-            console.log("Clicked: " + eClass)
-            break;
-
-        case "more":
-            console.log("Clicked: " + eClass)
+        case "show-less":
+            boxes.style.height = '450px';
+            boxes.style.marginBottom = '0px';
+            document.querySelector('.less').style.display = 'none';
+            document.querySelector('.more').style.display = 'flex';
             break;
 
         case "triangle-up":
-            console.log("Clicked: " + eClass)
+            boxes.style.height = '450px';
+            boxes.style.marginBottom = '0px';
+            document.querySelector('.less').style.display = 'none';
+            document.querySelector('.more').style.display = 'flex';
+            break;
+
+        case "show-more":
+            boxes.style.height = boxHeight;
+            boxes.style.marginBottom = '20px';
+            document.querySelector('.less').style.display = 'flex';
+            document.querySelector('.more').style.display = 'none';
             break;
 
         case "triangle-down":
-            console.log("Clicked: " + eClass)
+            boxes.style.height = boxHeight;
+            boxes.style.marginBottom = '20px';
+            document.querySelector('.less').style.display = 'flex';
+            document.querySelector('.more').style.display = 'none';
             break;
         
         default:
             //some default here
     }
 }
-
+//<==== Reveal End ====>
 
 
 

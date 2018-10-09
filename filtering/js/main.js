@@ -19,7 +19,6 @@ for(let nav of navLinks) {
     //nav.linkID = l++; //to identify the link that was clicked on.
 }
 
-
 //<==== Functions ====>
 
 function filterBoxes(e) {

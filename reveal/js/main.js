@@ -18,29 +18,32 @@ for(let i = 0; i < revealChild.length; i++) {
     }
 }
 
-function toggleReveal() {
-    console.log('Do the Reveal');
-}
-
-//experimenting with some silly hover for the triangle
-// function hoverEffect(e){
-//     console.log(e.target.className);
+function toggleReveal(e){
+    // console.log(e.target.className);
     
-//     let eClass = e.target.className;
-//     switch (eClass) {
+    let eClass = e.target.className;
+    switch (eClass) {
 
-//         case "less":
-//             document.querySelector('.triangle-up').style.transform = "scale(1.2) translateY(-2px)";
-//             break;
+        case "less":
+            console.log("Clicked: " + eClass)
+            break;
 
-//         case "more":
-//             document.querySelector('.triangle-down').style.transform = "scale(1.2) translateY(2px)";
-//             break;
+        case "more":
+            console.log("Clicked: " + eClass)
+            break;
 
-//         default:
-//             //some default here
-//     }
-// }
+        case "triangle-up":
+            console.log("Clicked: " + eClass)
+            break;
+
+        case "triangle-down":
+            console.log("Clicked: " + eClass)
+            break;
+        
+        default:
+            //some default here
+    }
+}
 
 
 

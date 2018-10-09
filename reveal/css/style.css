@@ -35,6 +35,22 @@ p {
   line-height: 1.4em; 
 }
 
+button {
+  background-color: #6f83ad;
+  border: none;
+  border-radius: 100px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 15px 46px;
+  transition: opacity 0.5s ease; 
+}
+  
+button:hover {
+  opacity: 0.8; 
+}
+
 /*=== Layout ====*/
 header {
   padding: 20px;
@@ -52,22 +68,6 @@ section {
 }
 
 /*==== Molecules ====*/
-button {
-  background-color: #6f83ad;
-  border: none;
-  border-radius: 100px;
-  color: #fff;
-  font-weight: 300;
-  font-size: 14px;
-  text-transform: uppercase;
-  padding: 15px 46px;
-  transition: opacity 0.5s ease; 
-}
-  
-button:hover {
-  opacity: 0.8; 
-}
-
 .reveal.more,
 .reveal.less {
   display: flex;

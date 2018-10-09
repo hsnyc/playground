@@ -4,48 +4,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    <title>Starter</title>
+    <title>Nav</title>
 </head>
 <body>
     <!-- [if lt IE 10]>
-		<p class="outdatedbrowser">You are using an <strong>outdated</strong> browser. Please <a href="http://outdatedbrowser.com/en">upgrade your browser</a> to improve your experience.</p>
+    <p class="outdatedbrowser">You are using an <strong>outdated</strong> browser. Please <a href="http://outdatedbrowser.com/en">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <!-- Mobile Menu -->
-    <div id="flyout-menu">
-        <ul class="mobile-menu">
-            <li class="m-menu"><a href="#">Menu Five</a></li>
-            <li class="m-menu m-drop-menu">Menu Four <span>&raquo;</span>
-                <ul class="m-sub-menu">
-                    <li><a href="#">Sub-menu 1</a></li>
-                    <li><a href="#">Sub-menu 2</a></li>
-                    <li><a href="#">Sub-menu 3</a></li>
-                </ul>
-            </li>
-            <li class="m-menu"><a href="#">Menu Three</a></li>
-            <li class="m-menu"><a href="#">Menu Two</a></li>
-            <li class="m-menu m-drop-menu">Menu One <span>&raquo;</span>
-                <ul class="m-sub-menu">
-                    <li><a href="#">Sub-menu 1</a></li>
-                    <li><a href="#">Sub-menu 2</a></li>
-                    <li><a href="#">Sub-menu 3</a></li>
-                </ul>
-            </li>      
-        </ul>
+    <div id="btt-icon">
+        <div id="btt-arrow"></div>
     </div>
 
-    <div id="wrapper">
-        <nav>
-            <div class="logo"><img src="http://placehold.it/180x80" alt="main-logo"></div>
-            <ul class="nav-menu">
-                <li class="menu drop-menu">Menu Five &nbsp;<img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
-                    <ul  class="sub-menu">
+    <header>
+        <nav class="wrapper">
+            <div class="logo">
+                <img src="http://placehold.it/180x80" width="180" height="80" alt="main-logo">
+            </div>
+
+            <!-- flyout menu button -->		
+            <button id="roundButton" class="navicon-button rarr">
+                <div class="navicon"></div>
+            </button>
+
+            <!-- Main Nav -->
+            <ul id="nav-menu" class="nav-menu">	
+                <li class="menu drop-menu">Menu Five &nbsp;
+                    <img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
+                    <ul class="sub-menu">
                         <li>Sub-menu 1</li>
                         <li>Sub-menu 2</li>
                         <li>Sub-menu 3</li>
+                        <li>Sub-menu 4</li>
+                        <li>Sub-menu 5</li>
                     </ul>
                 </li>
-                <li class="menu drop-menu">Menu Four &nbsp;<img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
+                <li class="menu drop-menu">Menu Four &nbsp;
+                    <img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
                     <ul class="sub-menu">
                         <li>Sub-menu 1</li>
                         <li>Sub-menu 2</li>
@@ -54,28 +47,32 @@
                 </li>
                 <li class="menu">Menu Three</li>
                 <li class="menu">Menu Two</li>
-                <li class="menu drop-menu">Menu One &nbsp;<img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
-                    <ul  class="sub-menu">
+                <li class="menu drop-menu">Menu One &nbsp;
+                    <img class="menu-icon" src="images/drop-icon.svg" alt="drop-menu-icon" width="14">
+                    <ul class="sub-menu">
                         <li>Sub-menu 1</li>
                         <li>Sub-menu 2</li>
                         <li>Sub-menu 3</li>
                     </ul>
-                </li>      
+                </li>
             </ul>
-
         </nav>
-        <section id="main">
-            <script>
-            // to add text here
-            for(var t = 0; t < 20; t++ ) {
-                document.write("<h2>" + (t+1) + ". Hello World!...");
-            }
-            </script>
-        </section>
-        <footer>
-            <small><a href="#">hsnyc</a></small>
-        </footer>
-    </div>
+    </header>
+
+    <section id="main">
+        <h2>A bunch of text here</h2>
+        <script>
+        // to add text here
+        for(var t = 0; t < 20; t++ ) {
+            document.write("<p>" + (t+1) + ". Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores asperiores velit dolorum debitis labore! Odit, consectetur delectus molestias modi suscipit distinctio iste, blanditiis, totam ex illo quod porro saepe maiores? sit amet consectetur adipisicing elit. Laboriosam, autem. Voluptate commodi doloremque hic ipsa necessitatibus voluptates aliquid. Non maxime illo dolor veniam, deleniti ab molestias rem itaque similique blanditiis quaerat explicabo sunt rerum nobis obcaecati eius officia, id quae.</p>");
+        }
+        </script>
+    </section>
+    
+    <footer>
+        <small><a href="#">hsnyc</a></small>
+    </footer>
+
 </body>
 <script src="js/main.js"></script>
 </html>

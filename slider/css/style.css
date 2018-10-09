@@ -1,0 +1,79 @@
+.container {
+    width: 80%;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+#slider {
+    width: 100%;
+    /* height: 350px; */
+    height: 80vh;
+    display: flex;
+    flex-flow: row nowrap;
+    transition: transform .5s ease-in-out;
+}
+.slide {
+    flex: 1 0 100%;
+    white-space: normal;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#itemOne {
+    background-color: rgb(175, 192, 149);
+    background-image: url("../images/benjamin-hung-340383-unsplash.jpg");
+    /* transform: translate3d(0, 0, 0); */
+    
+}
+#itemTwo {
+    background-color: #FF7F50;
+    background-image: url("../images/georgios-kaleadis-1081820-unsplash.jpg");
+    /* transform: translate3d(-100%, 0, 0); */
+}
+#itemThree {
+    background-color: #1E90FF;
+    background-image: url("../images/oskar-krawczyk-172847-unsplash.jpg");
+    /* transform: translate3d(-200%, 0, 0); */
+}
+#itemFour {
+    background-color: #DC143C;
+    background-image: url("../images/redd-angelo-100505-unsplash.jpg");
+    /* transform: translate3d(-300%, 0, 0); */
+}
+
+/* Nav Links */
+#navLinks {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+    /* enable/disable below styles to place nav links on top of slides */
+    /* margin-top: 6px; */
+    margin-top: -40px; 
+}
+
+#navLinks li {
+    margin: 10px;
+    list-style: none;
+    cursor: pointer;
+    background-color: rgb(224, 224, 224);
+    padding: 8px;
+    border-radius: 50%;
+    z-index: 99; /* <-- to place nav links on top of slides   */
+}
+
+#navLinks li:hover {
+    background-color: rgb(247, 178, 89);
+}
+
+#navLinks li.active {
+    background-color:rgb(206, 119, 62);
+    /* color: #FFFFFF; */
+    /* outline-width: 7px; */
+}
+
+#navLinks li.active:hover {
+    background-color:  rgb(255, 102, 0);
+    /* color: #FFFFFF; */
+}

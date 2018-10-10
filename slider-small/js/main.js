@@ -13,6 +13,15 @@ var calcValue = 0;
 // the activeLink provides a pointer to the currently displayed item
 // var activeLink = 0;
 
+for (var i = 0; i < slides.length; i++) {
+    var slide = slides[i];
+    //click event listener
+    slide.addEventListener('touchmove', drag, false);
+
+    // to identify the item for the activeLink
+    // link.itemID = i;
+}
+
 // Move to Next
 
 for (var i = 0; i < rightlink.length; i++) {
@@ -33,6 +42,12 @@ for (var i = 0; i < leftlink.length; i++) {
 
     // to identify the item for the activeLink
     // link.itemID = i;
+}
+// var xPos;
+
+function drag(e) {
+    var xPos = e.touches[0].clientX;
+    console.log("X coords: " + xPos);
 }
 
 function moveToNext() {

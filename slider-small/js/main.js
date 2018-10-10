@@ -1,93 +1,84 @@
  // <---- Slider ---->
 // getting the navigation links and the slider wrapper
-var links = document.querySelectorAll(".itemLinks");
-var slider = document.querySelector("#slider");
+var rightlink = document.querySelectorAll(".next");
+var leftlink = document.querySelectorAll(".prev");
+var slides = document.querySelectorAll(".slide");
+var position = 0;
+var calcValue = 0;
+// var lPosition = 192;
+
+// console.log(slide);
+// console.log(leftlink);
 
 // the activeLink provides a pointer to the currently displayed item
-var activeLink = 0;
+// var activeLink = 0;
 
-// setup the click event listeners for nav links
-for (var i = 0; i < links.length; i++) {
-    var link = links[i];
+// Move to Next
+
+for (var i = 0; i < rightlink.length; i++) {
+    var link = rightlink[i];
     //click event listener
-    link.addEventListener('click', setClickedItem, false);
+    link.addEventListener('click', moveToNext, false);
 
     // to identify the item for the activeLink
-    link.itemID = i;
+    // link.itemID = i;
 }
 
-// set first item as active
-links[activeLink].classList.add("active");
+// Move to Previous
 
-function setClickedItem(e) {
-    removeActiveLinks();
-    resetTimer();
+for (var i = 0; i < leftlink.length; i++) {
+    var link = leftlink[i];
+    //click event listener
+    link.addEventListener('click', moveToPrev, false);
 
-    var clickedLink = e.target;
-    activeLink = clickedLink.itemID;
-
-    changePosition(clickedLink);
-    // console.log(clickedLink);
+    // to identify the item for the activeLink
+    // link.itemID = i;
 }
 
-function removeActiveLinks() {
-        for (var i = 0; i < links.length; i++) {
-        links[i].classList.remove("active");
-    }
-}
+function moveToNext() {
 
-// Handle changing the slider position as well as ensure
-// the correct link is highlighted as being active
-function changePosition(link) {
+    // if(position !== 0) {
+    //     calcValue = position/192;
 
-    var position = link.itemID * -100 + "%";
+    //     if(calcValue > calcValue - (2*192)){
+    //         console.log("Good to go");
+            
+    //     }
+    // }
+    
+    position -= 192;
+
+    tValue = position + "px";
     // console.log(position);
 
-    var translateValue = "translate3d(" + position + ", 0, 0)";
-    slider.style.transform = translateValue;
-
-    link.classList.add("active");
-}
-// <---- Slider End ---->
-
-// <---- Slider: Pause on Hover | comment out if not desired ---->
-var slides = document.querySelectorAll(".slide");
-
-// set event listeners for pausing/resuming slider on hover in/out
-for (var i = 0; i < slides.length; i++) {
-    var slide = slides[i];
-    //mouseover and out events for each slide
-    slide.addEventListener('mouseover', function(){window.clearInterval(timeoutID);}, false);
-    slide.addEventListener('mouseout', function(){startTimer();}, false);
-}
-// <---- Slider: Pause on Hover End ---->
-
-// <---- Slider: Slide the content automatically ---->
-// Comment out if not desired. if not using, remove resetTimer() function from the setClickedItem() function 
-var timeoutID;
-
-function startTimer() {
-    // wait 8 seconds before calling goInactive
-    timeoutID = window.setInterval(goToNextItem, 8000);
-}
-
-function resetTimer() {
-    window.clearInterval(timeoutID);
-    startTimer();
-}
-
-function goToNextItem() {
-    removeActiveLinks();
-
-    if (activeLink < links.length - 1) {
-        activeLink++;
-    } else {
-        activeLink = 0;
+    var translateValue = "translate3d(" + tValue + ", 0, 0)";
+    
+    for(let slide of slides) {
+        slide.style.transform = translateValue;
     }
 
-    var newLink = links[activeLink];
-    changePosition(newLink);
+    console.log("Right Pos: " + position);
+    
+
 }
 
-startTimer();
-// <---- Slider: Slide the content automatically end ---->
+
+function moveToPrev() {
+
+    if(position !== 0){
+        position += 192;
+
+        tValue = position + "px";
+        // console.log(position);
+
+        var translateValue = "translate3d(" + tValue + ", 0, 0)";
+        
+        for(let slide of slides) {
+            slide.style.transform = translateValue;
+        }
+    }
+
+    
+
+    console.log("Left Pos " + position);
+}

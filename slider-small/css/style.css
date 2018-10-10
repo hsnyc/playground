@@ -38,7 +38,10 @@ section {
 }
 
 .container {
-    width: 80%;
+    width: 100%;
+    max-width: 1280px;
+    /* padding: 0 40px; */
+    height: 227px; /* navLinks + slider container */
     margin: 0px auto;
     overflow: hidden;
 }
@@ -46,36 +49,78 @@ section {
 /*=== Slider ====*/
 #slider {
     width: 100%;
-    height: 80vh;
+    height: 180px;
+    /* margin: 0 40px; */
     display: flex;
+    /* justify-content: center; */
     flex-flow: row nowrap;
-    transition: transform .5s ease-in-out;
 }
 .slide {
-    flex: 1 0 100%;
+    /* width: 172px; */
+    margin: 0 10px;
+    flex: 1 0 172px;
     white-space: normal;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    /* transform: translate3d(0px, 0, 0); */
+    transition: transform .2s ease-in-out;
 }
-#itemOne {
+#item-1 {
     background-color: rgb(175, 192, 149);
     /* background-image: url("../images/benjamin-hung-340383-unsplash.jpg"); */
     /* transform: translate3d(0, 0, 0); */
     
 }
-#itemTwo {
+#item-2 {
     background-color: #FF7F50;
     /* background-image: url("../images/georgios-kaleadis-1081820-unsplash.jpg"); */
     /* transform: translate3d(-100%, 0, 0); */
 }
-#itemThree {
+#item-3 {
     background-color: #1E90FF;
     /* background-image: url("../images/oskar-krawczyk-172847-unsplash.jpg"); */
     /* transform: translate3d(-200%, 0, 0); */
 }
-#itemFour {
+#item-4 {
     background-color: #DC143C;
+    /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
+    /* transform: translate3d(-300%, 0, 0); */
+}
+#item-5 {
+    background-color: #ffe600;
+    /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
+    /* transform: translate3d(-300%, 0, 0); */
+}
+#item-6 {
+    background-color: #eb55eb;
+    /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
+    /* transform: translate3d(-300%, 0, 0); */
+}
+
+#item-7 {
+    background-color: #DC143C;
+    /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
+    /* transform: translate3d(-300%, 0, 0); */
+}
+#item-8 {
+    background-color: #ffe600;
+    /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
+    /* transform: translate3d(-300%, 0, 0); */
+}
+#item-9 {
+    background-color: #447762;
+    /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
+    /* transform: translate3d(-300%, 0, 0); */
+}
+
+#item-10 {
+    background-color: rgb(187, 102, 119);
+    /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
+    /* transform: translate3d(-300%, 0, 0); */
+}
+#item-11 {
+    background-color: #585748;
     /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
     /* transform: translate3d(-300%, 0, 0); */
 }
@@ -102,17 +147,17 @@ section {
     text-shadow: 1px 1px 0.5px #c6c6c7c7;
 }
 
-.r-arrow {
-    margin-right: 4px;
+#r-arrow {
+    margin-right: 8px;
     transition: transform .2s ease-out;
 }
-.r-arrow:hover {
+#r-arrow:hover {
     transform: translateX(2px);
 }
-.l-arrow {
-    margin-left: 4px;
+#l-arrow {
+    margin-left: 16px;
     transition: transform .2s ease-out;
 }
-.l-arrow:hover {
+#l-arrow:hover {
     transform: translateX(-2px);
 }

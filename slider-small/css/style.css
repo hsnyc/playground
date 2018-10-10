@@ -82,37 +82,22 @@ section {
 
 /* Nav Links */
 #navLinks {
+    /* float: right; */
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
-    margin: 0px;
-    padding: 0px;
-    /* enable/disable below styles to place nav links on top of slides */
-    /* margin-top: 6px; */
-    margin-top: -40px; 
+    justify-content: space-between;
+    /* align-items: center; */
+    /* margin: 0px;
+    padding: 0px; */
 }
 
-#navLinks li {
-    margin: 10px;
-    list-style: none;
+#navLinks span {
+    display: inline-block;
     cursor: pointer;
-    background-color: rgb(224, 224, 224);
-    padding: 8px;
-    border-radius: 50%;
-    z-index: 99; /* <-- to place nav links on top of slides   */
+    margin-bottom: 4px;
+    /* padding: 0 4px; */
 }
 
-#navLinks li:hover {
-    background-color: rgb(247, 178, 89);
-}
-
-#navLinks li.active {
-    background-color:rgb(206, 119, 62);
-    /* color: #FFFFFF; */
-    /* outline-width: 7px; */
-}
-
-#navLinks li.active:hover {
-    background-color:  rgb(255, 102, 0);
-    /* color: #FFFFFF; */
+#navLinks span:hover {
+    text-shadow: 1px 1px 0.5px #c6c6c7c7;
 }

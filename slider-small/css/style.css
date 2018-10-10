@@ -130,7 +130,7 @@ section {
     /* float: right; */
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: flex-end;
     /* align-items: center; */
     /* margin: 0px;
     padding: 0px; */
@@ -145,6 +145,13 @@ section {
 
 #navLinks span:hover {
     text-shadow: 1px 1px 0.5px #c6c6c7c7;
+}
+
+.left {
+    margin-right: 30px;
+}
+.right {
+    margin-left: 30px;
 }
 
 #r-arrow {

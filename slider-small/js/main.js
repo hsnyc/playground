@@ -3,8 +3,14 @@
 var rightlink = document.querySelectorAll(".next");
 var leftlink = document.querySelectorAll(".prev");
 var slides = document.querySelectorAll(".slide");
-var position = 0;
-var calcValue = 0;
+var position = 0; //to track the amount of px the slides should move.
+var sCount = 0; //to track the position of the slide. 
+
+//set a variable to the number of slides - 2 as the limmit.
+const sLimmit = slides.length - 2;
+// console.log(sLimmit);
+
+// var calcValue = 0;
 // var lPosition = 192;
 
 // console.log(slide);
@@ -43,8 +49,8 @@ for (var i = 0; i < leftlink.length; i++) {
     // to identify the item for the activeLink
     // link.itemID = i;
 }
-// var xPos;
 
+//Dragging function
 function drag(e) {
     var xPos = e.touches[0].clientX;
     console.log("X coords: " + xPos);
@@ -52,35 +58,30 @@ function drag(e) {
 
 function moveToNext() {
 
-    // if(position !== 0) {
-    //     calcValue = position/192;
+    //check if count is less then sLimmit to prevent infinite scrolling
+    if(sCount < sLimmit) {
+        sCount ++;
+        console.log("sCount: " +sCount);
+        position -= 192;
 
-    //     if(calcValue > calcValue - (2*192)){
-    //         console.log("Good to go");
-            
-    //     }
-    // }
-    
-    position -= 192;
+        tValue = position + "px";
+        // console.log(position);
 
-    tValue = position + "px";
-    // console.log(position);
-
-    var translateValue = "translate3d(" + tValue + ", 0, 0)";
-    
-    for(let slide of slides) {
-        slide.style.transform = translateValue;
+        var translateValue = "translate3d(" + tValue + ", 0, 0)";
+        
+        for(let slide of slides) {
+            slide.style.transform = translateValue;
+        }
     }
-
-    console.log("Right Pos: " + position);
-    
-
 }
 
 
 function moveToPrev() {
 
+    //check if position is 0 to prevent right translation.
     if(position !== 0){
+        sCount --;
+        console.log("sCount: " +sCount);
         position += 192;
 
         tValue = position + "px";
@@ -95,5 +96,5 @@ function moveToPrev() {
 
     
 
-    console.log("Left Pos " + position);
+    // console.log("Left Pos " + position);
 }

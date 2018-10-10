@@ -60,23 +60,23 @@ section {
 }
 #itemOne {
     background-color: rgb(175, 192, 149);
-    background-image: url("../images/benjamin-hung-340383-unsplash.jpg");
+    /* background-image: url("../images/benjamin-hung-340383-unsplash.jpg"); */
     /* transform: translate3d(0, 0, 0); */
     
 }
 #itemTwo {
     background-color: #FF7F50;
-    background-image: url("../images/georgios-kaleadis-1081820-unsplash.jpg");
+    /* background-image: url("../images/georgios-kaleadis-1081820-unsplash.jpg"); */
     /* transform: translate3d(-100%, 0, 0); */
 }
 #itemThree {
     background-color: #1E90FF;
-    background-image: url("../images/oskar-krawczyk-172847-unsplash.jpg");
+    /* background-image: url("../images/oskar-krawczyk-172847-unsplash.jpg"); */
     /* transform: translate3d(-200%, 0, 0); */
 }
 #itemFour {
     background-color: #DC143C;
-    background-image: url("../images/redd-angelo-100505-unsplash.jpg");
+    /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
     /* transform: translate3d(-300%, 0, 0); */
 }
 
@@ -100,4 +100,19 @@ section {
 
 #navLinks span:hover {
     text-shadow: 1px 1px 0.5px #c6c6c7c7;
+}
+
+.r-arrow {
+    margin-right: 4px;
+    transition: transform .2s ease-out;
+}
+.r-arrow:hover {
+    transform: translateX(2px);
+}
+.l-arrow {
+    margin-left: 4px;
+    transition: transform .2s ease-out;
+}
+.l-arrow:hover {
+    transform: translateX(-2px);
 }

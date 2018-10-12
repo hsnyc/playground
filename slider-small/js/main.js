@@ -10,10 +10,31 @@ var sCount = 0; //to track the position of the slide.
 const sLimmit = slides.length - 2;
 // console.log(sLimmit);
 
-//touch event listener
+//touch event listeners
 for (var i = 0; i < slides.length; i++) {
     var slide = slides[i];
     slide.addEventListener('touchmove', drag, false);
+    slide.addEventListener('touchstart', dragStart, false);
+    slide.addEventListener('touchend', dragEnd, false);
+}
+
+//Dragging functions
+function drag(e) {
+    // console.log("Touchmove: " + e);
+    var xPos = e.touches[0].clientX;
+    console.log("X coords: " + xPos);
+}
+
+function dragStart(e) {
+    console.log("TouchStart: " + e);
+    // var xPos = e.touches[0].clientX;
+    // console.log("X coords: " + xPos);
+}
+
+function dragEnd(e) {
+    console.log("TouchEnd: " + e);
+    // var xPos = e.touches[0].clientX;
+    // console.log("X coords: " + xPos);
 }
 
 // Move to Next
@@ -30,11 +51,7 @@ for (var i = 0; i < leftlink.length; i++) {
     link.addEventListener('click', moveToPrev, false);
 }
 
-//Dragging function
-function drag(e) {
-    var xPos = e.touches[0].clientX;
-    console.log("X coords: " + xPos);
-}
+
 
 function moveToNext() {
 

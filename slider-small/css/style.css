@@ -73,7 +73,7 @@ section {
     
 }
 #item-2 {
-    background-color: #FF7F50;
+    background-color: rgb(112, 88, 79);
     /* background-image: url("../images/georgios-kaleadis-1081820-unsplash.jpg"); */
     /* transform: translate3d(-100%, 0, 0); */
 }
@@ -99,12 +99,12 @@ section {
 }
 
 #item-7 {
-    background-color: #DC143C;
+    background-color: rgb(176, 233, 188);
     /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
     /* transform: translate3d(-300%, 0, 0); */
 }
 #item-8 {
-    background-color: #ffe600;
+    background-color: #ff7300;
     /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
     /* transform: translate3d(-300%, 0, 0); */
 }

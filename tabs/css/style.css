@@ -1,0 +1,105 @@
+@import "https://fonts.googleapis.com/css?family=Space+Mono";
+
+/*
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+
+    Font Weights:
+    - Regular
+    - Regular Italic
+    - Bold
+    - Bold Italic
+*/
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Space Mono", monospace;
+  color: #65646A;
+  padding: 20px; }
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
+h1 {
+  margin: 1em 0px 0px;
+}
+
+p {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.4em;
+}
+
+button {
+    background-color: #6f83ad;
+    border: none;
+    border-radius: 100px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 10px 26px;
+    transition: opacity 0.5s ease;
+    box-shadow: -1px 1px 2px rgba(101, 100, 106, 0.50);
+  }
+  
+  button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    /* box-shadow: 0px 0px 4px rgb(85, 85, 88); */
+  }
+
+  button:active {
+    transform: translateY(1px);
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.outdatedbrowser {
+  margin: 0 auto;
+  background: #ccc;
+  color: #6f83ad;
+  padding: 1em;
+  text-align: center;
+}
+  .outdatedbrowser a {
+    color: #dd6f53;
+  }
+
+  .message {
+    width: 60%;
+    margin: 40px auto 0;
+  }
+
+#wrapper {
+  height: 90vh;
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+/*==== FOOTER ====*/
+footer {
+  justify-self: baseline;
+}
+
+footer a {
+  /* margin-top: 20px; */
+  display: block;
+  color: #6f83ad;
+  text-align: center;
+  text-decoration: none;
+}

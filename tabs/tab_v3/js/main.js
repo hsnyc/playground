@@ -30,9 +30,16 @@ function openTab(e) {
         tabPanel[p].style.display = 'none';
     }
 
+    //hide underline from active tab
+    for (var t=0; t < tabs.length; t++) {
+        tabs[t].classList.remove('show-underline');
+    }
+
     //and display currently clicked panel
     tabPanel[tabIndex].style.display = 'block'; //this can be Flex if needed
 
+    //show underline on clicked tab
+    e.target.classList.add('show-underline');
 }
 
 // ===== TABS End ======= //

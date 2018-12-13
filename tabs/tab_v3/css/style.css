@@ -178,6 +178,12 @@ p {
   transform: scaleX(1);
 }
 
+.show-underline:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
 
 /*==== FOOTER ====*/
 footer {

@@ -8,6 +8,11 @@ var tabID;
 var idNum;
 var tabIndex;
 
+window.onload = function() {
+    //add underline to first Tab
+    tabs[0].classList.add('show-underline');
+};
+
 //IE bug: re-doing Loop
 for (var t = 0; t < tabs.length; t++) {
     tabs[t].addEventListener('click', openTab, false);

@@ -1,0 +1,170 @@
+@import "https://fonts.googleapis.com/css?family=Space+Mono";
+
+/*
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+
+    Font Weights:
+    - Regular
+    - Regular Italic
+    - Bold
+    - Bold Italic
+*/
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Space Mono", monospace;
+  color: #65646A;
+  padding: 20px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 42px;
+  margin: 1em 0px 0px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+p {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.4em;
+}
+
+.outdatedbrowser {
+  margin: 0 auto;
+  background: #ccc;
+  color: #6f83ad;
+  padding: 1em;
+  text-align: center;
+}
+
+.outdatedbrowser a {
+  color: #dd6f53;
+}
+
+.message {
+  width: 60%;
+  margin: 40px auto 0;
+}
+
+#wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/*==== TABS ====*/
+
+.col-text, .col-image {
+  flex: 1 1 50%;
+}
+
+.col-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.tab-panels {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+}
+
+.tab-panel {
+  display: none;
+  width: 100%;
+  padding: 20px 40px;
+}
+
+#tab-panel-1 {
+  display: block;
+  background-color: #e0cf8c;
+}
+#tab-panel-2 {
+  background-color: #96bcc7;
+}
+#tab-panel-3 {
+  background-color: #caaa83;
+}
+#tab-panel-4 {
+  background-color: #98a89b;
+}
+
+.tabs {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 130px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .1s ease-in;
+}
+
+.tab:hover {
+  cursor: pointer;
+}
+
+#tab-1 {
+  flex: 1 1 240px;
+  background-color: #e0cf8c;
+}
+
+#tab-1:hover {
+  background-color: #B59729;
+}
+
+#tab-2 {
+  flex: 1 1 240px;
+  background-color: #96bcc7;
+}
+
+#tab-2:hover {
+  background-color: #0683A3;
+}
+
+#tab-3 {
+  flex: 1 1 240px;
+  background-color: #caaa83;
+}
+
+#tab-3:hover {
+  background-color: #C1731A;
+}
+
+#tab-4 {
+  flex: 1 1 240px;
+  background-color: #98a89b;
+}
+
+#tab-4:hover {
+  background-color: #6da777;
+}
+
+
+/*==== FOOTER ====*/
+footer {
+  padding: 20px;
+}
+
+footer a {
+  display: block;
+  color: #6f83ad;
+  text-align: center;
+  text-decoration: none;
+}

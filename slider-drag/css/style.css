@@ -1,0 +1,202 @@
+ /*
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+*/
+
+@import "https://fonts.googleapis.com/css?family=Space+Mono";
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  color: #65646A;
+  margin: 0;
+}
+
+/*==== Atoms ====*/
+h1 {
+    text-align: center;
+    margin: 0;
+}
+
+p {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.4em; 
+}
+
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/*=== Layout ====*/
+header {
+    padding: 20px;
+}
+  
+section {
+    background-color: #fff; 
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    /* padding: 0 40px; */
+    height: 227px; /* navLinks + slider container */
+    margin: 0px auto;
+    overflow: hidden;
+}
+
+/*=== Slider ====*/
+
+.slider-wrap {
+    width: 60%;
+    /* max-width: 776px; */
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.slider {
+    width: 576px;
+    height: 180px;
+    margin: 0 auto;
+    display: flex;
+    /* justify-content: center; */
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+
+    /* Snap Points */
+    /* -webkit-scroll-snap-points-x: repeat(192px);
+    -ms-scroll-snap-points-x: repeat(192px);
+    scroll-snap-points-x: repeat(192px);
+    -webkit-scroll-snap-type: mandatory;
+    -ms-scroll-snap-type: mandatory;
+    scroll-snap-type: mandatory; */
+}
+.slide {
+    /* width: 172px; */
+    margin: 0 10px;
+    flex: 1 0 172px;
+    white-space: normal;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* transform: translate3d(0px, 0, 0); */
+    transition: transform .2s ease-in-out;
+}
+
+#item-1 {
+    background-color: rgb(175, 192, 149);
+    /* background-image: url("../images/benjamin-hung-340383-unsplash.jpg"); */
+    /* transform: translate3d(0, 0, 0); */
+    
+}
+#item-2 {
+    background-color: rgb(112, 88, 79);
+    /* background-image: url("../images/georgios-kaleadis-1081820-unsplash.jpg"); */
+    /* transform: translate3d(-100%, 0, 0); */
+}
+#item-3 {
+    background-color: #1E90FF;
+    /* background-image: url("../images/oskar-krawczyk-172847-unsplash.jpg"); */
+    /* transform: translate3d(-200%, 0, 0); */
+}
+#item-4 {
+    background-color: #DC143C;
+    /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
+    /* transform: translate3d(-300%, 0, 0); */
+}
+#item-5 {
+    background-color: #ffe600;
+    /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
+    /* transform: translate3d(-300%, 0, 0); */
+}
+#item-6 {
+    background-color: #eb55eb;
+    /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
+    /* transform: translate3d(-300%, 0, 0); */
+}
+
+#item-7 {
+    background-color: rgb(176, 233, 188);
+    /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
+    /* transform: translate3d(-300%, 0, 0); */
+}
+#item-8 {
+    background-color: #ff7300;
+    /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
+    /* transform: translate3d(-300%, 0, 0); */
+}
+#item-9 {
+    background-color: #447762;
+    /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
+    /* transform: translate3d(-300%, 0, 0); */
+}
+
+#item-10 {
+    background-color: rgb(187, 102, 119);
+    /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
+    /* transform: translate3d(-300%, 0, 0); */
+}
+#item-11 {
+    background-color: #585748;
+    /* background-image: url("../images/redd-angelo-100505-unsplash.jpg"); */
+    /* transform: translate3d(-300%, 0, 0); */
+}
+
+/* Nav Links */
+/* #navLinks { */
+    /* float: right; */
+    /* display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end; */
+    /* align-items: center; */
+    /* margin: 0px;
+    padding: 0px; */
+/* } */
+
+.navLink:focus {outline:0;}
+
+.navLink span {
+    display: inline-block;
+    cursor: pointer;
+    /* margin-bottom: 4px; */
+    /* padding: 0 4px; */
+}
+
+.navLink span:hover {
+    text-shadow: 1px 1px 0.5px #c6c6c7c7;
+}
+
+.left {
+    /* margin-right: 30px; */
+}
+.right {
+    /* margin-left: 30px; */
+}
+
+#r-arrow {
+    margin-right: 8px;
+    transition: transform .2s ease-out;
+}
+#r-arrow:hover {
+    transform: translateX(2px);
+}
+#l-arrow {
+    margin-left: 16px;
+    transition: transform .2s ease-out;
+}
+#l-arrow:hover {
+    transform: translateX(-2px);
+}

@@ -28,15 +28,6 @@ p {
     line-height: 1.4em; 
 }
 
-.noSelect {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
 /*=== Layout ====*/
 header {
     padding: 20px;
@@ -166,7 +157,14 @@ section {
     padding: 0px; */
 /* } */
 
-.navLink:focus {outline:0;}
+.navLink {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 .navLink span {
     display: inline-block;

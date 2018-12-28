@@ -1,9 +1,9 @@
  // <---- Slider ---->
 // getting the navigation links and the slider wrapper
-var rightlink = document.querySelector(".next");
-var leftlink = document.querySelector(".prev");
-var slider = document.querySelector(".slider");
-var slides = document.querySelectorAll(".slide");
+const rightlink = document.querySelector(".next");
+const leftlink = document.querySelector(".prev");
+const slider = document.querySelector(".slider");
+const slides = document.querySelectorAll(".slide");
 var position = 0; //to track the amount of px the slides should move.
 var sCount = 0; //to track the position of the slide.
 
@@ -75,4 +75,39 @@ function moveToPrev() {
         }
     }
 }
+
+// ========================= 
+// Drag to Scroll
+// =========================
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+    // console.log(scrollLeft);
+});
+slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+});
+slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+});
+slider.addEventListener('mousemove', (e) => {
+    if(!isDown) { return; } // stop the fn from running
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    // console.log({x, startX});
+    const walk = x - startX;
+    slider.scrollLeft = scrollLeft - walk;
+});
+
+
+
  // <---- Slider Ends ---->

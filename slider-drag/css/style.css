@@ -64,17 +64,15 @@ section {
     /* justify-content: center; */
     flex-flow: row nowrap;
     overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-
-    /* Snap Points */
-    /* -webkit-scroll-snap-points-x: repeat(192px);
-    -ms-scroll-snap-points-x: repeat(192px);
-    scroll-snap-points-x: repeat(192px);
-    -webkit-scroll-snap-type: mandatory;
-    -ms-scroll-snap-type: mandatory;
-    scroll-snap-type: mandatory; */
+    transition: transform 100ms ease-in;
 }
+
+.slider.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1.04);
+}
+
 .slide {
     /* width: 172px; */
     margin: 0 10px;
@@ -198,3 +196,4 @@ section {
 #l-arrow:hover {
     transform: translateX(-2px);
 }
+

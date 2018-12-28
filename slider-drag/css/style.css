@@ -57,6 +57,7 @@ section {
 }
 
 .slider {
+    position: relative;
     width: 576px;
     height: 180px;
     margin: 0 auto;
@@ -75,6 +76,7 @@ section {
 
 .slide {
     /* width: 172px; */
+    position: relative;
     margin: 0 10px;
     flex: 1 0 172px;
     white-space: normal;

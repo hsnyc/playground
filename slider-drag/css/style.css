@@ -63,7 +63,7 @@ section {
     display: flex;
     /* justify-content: center; */
     flex-flow: row nowrap;
-    overflow-x: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
 

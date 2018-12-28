@@ -16,7 +16,7 @@ jsSources = [
 ];
 
 //html and sass sources
-htmlSources = [outputDir + '**/*.html'];
+htmlSources = [outputDir + '**/**/*.html'];
 
 //Tasks Begin
 gulp.task('html', function() {

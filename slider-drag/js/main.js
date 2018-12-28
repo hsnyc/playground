@@ -7,25 +7,16 @@ const slides = document.querySelectorAll(".slide");
 let position = 0; //to track the amount of px the slides should move.
 // var sCount = 0; //to track the position of the slide.
 
-//get the initial position of the first item in the slider
-const fiPos = slides[0].getBoundingClientRect().left;
-let fcPos = fiPos; // to get the current position of first item in slider
+let fcPos; // to get the current position of first item in slider
+
+let lcPos; // to get the current position of the last item in slider
 
 //get the index of last item in slider array
 let lSlide = slides.length - 1;
 
-//get the initial position of the last item in the slider
-const liPos = slides[lSlide].getBoundingClientRect().right;
-let lcPos = liPos; // to get the current position of the last item in slider
-// console.log(liPos);
-
 //get positon of slider
 const sPos = slider.getBoundingClientRect();
 // console.log(fiPos - sPos.left);
-
-//set a variable to the number of slides - X as the limmit. X is the number of slides you want to display at a time. In this case it is 3.  
-// const sLimmit = slides.length - 3;
-// console.log(sLimmit);
 
 //Get slides width, margin, and padding
 var style = slides[0].currentStyle || window.getComputedStyle(slides[0]);
@@ -41,19 +32,16 @@ let totalMargin = sLMargin + sRMargin;
 let totalPadding = sLPadding + sRPadding;
 
 const pxVal = sWidth + totalMargin + totalPadding;
-console.log("PixVal: " + pxVal);
-
+// console.log("PixVal: " + pxVal);
 
 // Move to Next
 rightlink.addEventListener('click', moveToNext, false);
-
 
 // Move to Previous
 leftlink.addEventListener('click', moveToPrev, false);
 
 
 function moveToNext() {
-
     lcPos = slides[lSlide].getBoundingClientRect().right;
         // console.log(sPos.right);
         // console.log(lcPos - sPos.right);
@@ -62,8 +50,6 @@ function moveToNext() {
     if((lcPos - sPos.right) > 0 ) {
         //if current pos is less than the initial then scroll right
         position -= pxVal;
-        console.log("Position: " + position);
-        console.log("pxValue: " + pxVal);
 
         var tValue = position + "px";
         // console.log(position);
@@ -77,22 +63,17 @@ function moveToNext() {
 }
 
 function moveToPrev() {
-
     fcPos = slides[0].getBoundingClientRect().left;
     // console.log(sPos.left);
     // console.log(fcPos - sPos.left);
 
     //check for pos of first item in the array
     if((fcPos - sPos.left) < 0 ) {
-        // sCount --;
         
          //if current pos is less than the initial then scroll right
          position += pxVal;
-         console.log("Position: " + position);
-         console.log("pxValue: " + pxVal);
  
          var tValue = position + "px";
-         // console.log(position);
  
          var translateValue = "translate3d(" + tValue + ", 0, 0)";
          

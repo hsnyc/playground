@@ -1,4 +1,4 @@
- // <---- Slider ---->
+ // ==== Slider ====
 // getting the navigation links and the slider wrapper
 const rightlink = document.querySelector(".next");
 const leftlink = document.querySelector(".prev");
@@ -116,7 +116,6 @@ function lock(e) {
     }
 
     scrollLeft = slider.scrollLeft;
-    // console.log(e);
 }
 
 function drag(e) {
@@ -126,17 +125,15 @@ function drag(e) {
 
     if(e.type === "touchmove") {       
         x = Math.floor(e.targetTouches[0].clientX) - slider.offsetLeft;
-        // console.log(x);
     }
 
     if(e.type === "mousemove") {
-        x = e.pageX - slider.offsetLeft;     
+        x = e.pageX - slider.offsetLeft;
     }
 
     // console.log({x, startX});
     const walk = x - startX;
     slider.scrollLeft = scrollLeft - walk;
-
 };
 
 function end() {
@@ -151,4 +148,4 @@ touchend - fired when a touch point is removed from the touch surface.
 touchcancel - fired when a touch point has been disrupted in an implementation-specific manner (for example, too many touch points are created).
 */
 
- // <---- Slider Ends ---->
+ // ==== Slider Ends ====

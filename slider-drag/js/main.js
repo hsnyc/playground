@@ -16,7 +16,6 @@ let lSlide = slides.length - 1;
 
 //get positon of slider
 const sPos = slider.getBoundingClientRect();
-// console.log(fiPos - sPos.left);
 
 //Get slides width, margin, and padding
 var style = slides[0].currentStyle || window.getComputedStyle(slides[0]);

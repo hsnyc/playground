@@ -1,21 +1,25 @@
- // <---- Slider ---->
+ // ==== Slider ====
 // getting the navigation links and the slider wrapper
-var rightlink = document.querySelectorAll(".next");
-var leftlink = document.querySelectorAll(".prev");
-var slides = document.querySelectorAll(".slide");
-var position = 0; //to track the amount of px the slides should move.
-var sCount = 0; //to track the position of the slide.
-var xPos = 0; //tracking position of drag
-var startPos = 0; //check the initial position on the screen
-// var lastPos = 0; //to track the last position of the touch event
+const rightlink = document.querySelector(".next");
+const leftlink = document.querySelector(".prev");
+const slider = document.querySelector(".slider");
+const slides = document.querySelectorAll(".slide");
+let position = 0; //to track the amount of px the slides should move.
+// var sCount = 0; //to track the position of the slide.
 
+let fcPos; // to get the current position of first item in slider
 
-//set a variable to the number of slides - 2 as the limmit.
-const sLimmit = slides.length - 2;
-// console.log(sLimmit);
+let lcPos; // to get the current position of the last item in slider
+
+//get the index of last item in slider array
+let lSlide = slides.length - 1;
+
+//get positon of slider
+const sPos = slider.getBoundingClientRect();
 
 //Get slides width, margin, and padding
 var style = slides[0].currentStyle || window.getComputedStyle(slides[0]);
+
 //get width of first slide, assuming all slides are the same width.
 let sWidth = slides[0].scrollWidth;
 //Get left + right margin
@@ -25,79 +29,32 @@ let sLPadding = parseFloat(style.paddingLeft);
 let sRPadding = parseFloat(style.paddingRight);
 let totalMargin = sLMargin + sRMargin;
 let totalPadding = sLPadding + sRPadding;
-// console.log("Left Margin: " + sLMargin);
-// console.log("Right Margin: " + sRMargin);
-// console.log("Left Padding: " + sLPadding);
-// console.log("Right Padding: " + sRPadding);
 
 const pxVal = sWidth + totalMargin + totalPadding;
 // console.log("PixVal: " + pxVal);
-
-//touch event listeners
-for (var i = 0; i < slides.length; i++) {
-    var slide = slides[i];
-    slide.addEventListener('touchmove', drag, false);
-    slide.addEventListener('touchstart', dragStart, false);
-    // slide.addEventListener('touchend', dragEnd, false);
-}
-
-function dragStart(e) {
-    startPos = e.touches[0].clientX;
-    // console.log("Start Pos " + startPos);
-    // console.log("TouchStart: " + e);
-    // var xPos = e.touches[0].clientX;
-    // console.log("X coords: " + xPos);
-}
-
-//Dragging functions
-function drag(e) {
-    // console.log("Touchmove: " + e);
-    xPos = e.touches[0].clientX;
-    // console.log("X coords: " + xPos);
-
-    //check for direction of drag then add/subtract to give it a drag 'delay'
-    if(xPos > startPos + 96) {
-
-        moveToPrev();
-        // console.log("Swiping Right");
-
-    } else if(xPos < startPos - 96) {
-
-        moveToNext();
-        // console.log("Swiping Left");
-
-    }
-}
-
-// function dragEnd(e) {
-    // console.log("TouchEnd: " + e);
-    // console.log("Previous TouchEnd Pos: " + lastPos);
-    // console.log("Last TouchEnd Pos: " + xPos);
-    // lastPos = xPos;
-    // console.log("X coords: " + xPos);
-// }
 
 // Move to Next
 for (var i = 0; i < rightlink.length; i++) {
     var link = rightlink[i];
     //click event listener
-    link.addEventListener('click', moveToNext, false);
+    rightlink.addEventListener('click', moveToNext, false);
 }
 
 // Move to Previous
 for (var i = 0; i < leftlink.length; i++) {
     var link = leftlink[i];
     //click event listener
-    link.addEventListener('click', moveToPrev, false);
+    leftlink.addEventListener('click', moveToPrev, false);
 }
 
 function moveToNext() {
+    lcPos = slides[lSlide].getBoundingClientRect().right;
+        // console.log(sPos.right);
+        // console.log(lcPos - sPos.right);
 
-    //check if count is less then sLimmit to prevent infinite scrolling
-    if(sCount < sLimmit) {
-        sCount ++;
-        // console.log("sCount: " +sCount);
-        // console.log("Px: " + px);
+    //check for pos of first item in the array
+    if((lcPos - sPos.right) > 0 ) {
+        //if current pos is less than the initial then scroll right
         position -= pxVal;
 
         var tValue = position + "px";
@@ -112,20 +69,89 @@ function moveToNext() {
 }
 
 function moveToPrev() {
+    fcPos = slides[0].getBoundingClientRect().left;
+    // console.log(sPos.left);
+    // console.log(fcPos - sPos.left);
 
-    //check if position is 0 to prevent right translation.
-    if(position !== 0){
-        sCount --;
-        // console.log("sCount: " +sCount);
-        position += pxVal;
-
-        var tValue = position + "px";
-        // console.log(position);
-
-        var translateValue = "translate3d(" + tValue + ", 0, 0)";
+    //check for pos of first item in the array
+    if((fcPos - sPos.left) < 0 ) {
         
-        for(let slide of slides) {
-            slide.style.transform = translateValue;
-        }
+         //if current pos is less than the initial then scroll right
+         position += pxVal;
+ 
+         var tValue = position + "px";
+ 
+         var translateValue = "translate3d(" + tValue + ", 0, 0)";
+         
+         for(let slide of slides) {
+             slide.style.transform = translateValue;
+         }
     }
 }
+
+// ========================= 
+// Drag to Scroll
+// =========================
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', lock, false);
+slider.addEventListener('touchstart', lock, false);
+
+slider.addEventListener('mousemove', drag, false);
+slider.addEventListener('touchmove', drag, false);
+
+slider.addEventListener('mouseleave', end, false);
+slider.addEventListener('mouseup', end, false);
+slider.addEventListener('touchend', end, false);
+
+function lock(e) {
+    e.preventDefault();
+    isDown = true;
+    slider.classList.add('active');
+
+    if(e.type === "touchstart") {
+        startX = Math.floor(e.targetTouches[0].clientX) - slider.offsetLeft;
+        // console.log(startX);
+    }
+
+    if(e.type === "mousedown") {
+        startX = e.pageX - slider.offsetLeft;
+    }
+
+    scrollLeft = slider.scrollLeft;
+}
+
+function drag(e) {
+    if(!isDown) { return; } // stop the fn from running
+    e.preventDefault();
+    let x;
+
+    if(e.type === "touchmove") {       
+        x = Math.floor(e.targetTouches[0].clientX) - slider.offsetLeft;
+    }
+
+    if(e.type === "mousemove") {
+        x = e.pageX - slider.offsetLeft;
+    }
+
+    // console.log({x, startX});
+    const walk = x - startX;
+    slider.scrollLeft = scrollLeft - walk;
+};
+
+function end() {
+    isDown = false;
+    slider.classList.remove('active');
+};
+
+/*
+touchstart - fired when a touch point is placed on the touch surface.
+touchmove - fired when a touch point is moved along the touch surface.
+touchend - fired when a touch point is removed from the touch surface.
+touchcancel - fired when a touch point has been disrupted in an implementation-specific manner (for example, too many touch points are created).
+*/
+
+ // ==== Slider Ends ====

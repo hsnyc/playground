@@ -177,13 +177,6 @@ section {
     text-shadow: 1px 1px 0.5px #c6c6c7c7;
 }
 
-.left {
-    /* margin-right: 30px; */
-}
-.right {
-    /* margin-left: 30px; */
-}
-
 #r-arrow {
     margin-right: 8px;
     transition: transform .2s ease-out;

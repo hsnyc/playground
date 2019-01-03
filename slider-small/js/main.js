@@ -1,7 +1,7 @@
  // ==== Slider ====
 // getting the navigation links and the slider wrapper
-const rightlink = document.querySelector(".next");
-const leftlink = document.querySelector(".prev");
+let rightlink = document.querySelectorAll(".next");
+let leftlink = document.querySelectorAll(".prev");
 const slider = document.querySelector(".slider");
 const slides = document.querySelectorAll(".slide");
 let position = 0; //to track the amount of px the slides should move.
@@ -37,14 +37,14 @@ const pxVal = sWidth + totalMargin + totalPadding;
 for (var i = 0; i < rightlink.length; i++) {
     var link = rightlink[i];
     //click event listener
-    rightlink.addEventListener('click', moveToNext, false);
+    link.addEventListener('click', moveToNext, false);
 }
 
 // Move to Previous
 for (var i = 0; i < leftlink.length; i++) {
     var link = leftlink[i];
     //click event listener
-    leftlink.addEventListener('click', moveToPrev, false);
+    link.addEventListener('click', moveToPrev, false);
 }
 
 function moveToNext() {

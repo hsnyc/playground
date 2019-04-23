@@ -9,21 +9,17 @@
   },
   "author": "Henry Sanchez",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "natives": "^1.1.6"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.0.0",
+    "gulp-connect": "^5.7.0",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.3.0",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^3.2.1",
     "gulp-util": "^3.0.8",
     "imagemin-pngcrush": "^5.1.0"
   }
-  // ,
-  // //<-- may enable this in the future -->
-  // "scripts": {
-  //   "preinstall": "npm i -g gulp"
-  // }
-  
 }

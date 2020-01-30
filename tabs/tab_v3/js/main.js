@@ -22,12 +22,11 @@ for (var t = 0; t < tabs.length; t++) {
 function openTab(e) {
 
     //get ID of clicked tab
-    tabID = e.target.id;
-    // console.log(tabID);
+    tabID = e.target.id; //i.e tab-3
 
     //find out which panel should be reveal
-    idNum = tabID.match(/\d/g); //returns array
-    idNum = idNum.join(''); //remove from array
+    idNum = tabID.match(/\d/g); //returns array with the result of the match i.e Array["3"];
+    idNum = idNum.join(''); //remove from array and return string i.e 3
     tabIndex = idNum - 1; //subtract one due to zero based # in arrays
 
     //hide any visible panel

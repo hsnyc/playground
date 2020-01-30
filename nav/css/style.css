@@ -93,9 +93,18 @@ nav *:after {
   outline: none; 
 }
 
-.nav-menu li {
+.nav-menu > li {
   display: inline-block;
-  padding: 20px; 
+  padding: 20px;
+}
+
+.nav-menu > li > a {
+  color: #65646A;
+  text-decoration: none;
+}
+
+.nav-menu li a:hover {
+  opacity: .8;
 }
 
 .nav-menu li:hover {
@@ -133,7 +142,14 @@ nav *:after {
 .sub-menu li {
   display: block;
   text-align: left;
-  padding: 10px 20px; 
+  /* padding: 10px 20px;  */
+}
+
+.sub-menu li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
 }
 
 .sub-menu li:hover {
@@ -318,7 +334,7 @@ nav *:after {
     transform: translate3d(0vw, 0, 0); 
   }
 
-  .nav-menu li {
+  .nav-menu > li {
     display: block;
     padding: 20px; 
   }
@@ -335,8 +351,10 @@ nav *:after {
     transition: height 0.3s ease-out, margin 0.3s ease-out; 
   }
 
-  .sub-menu li {
-    text-align: center; 
+  .sub-menu li a {
+    display: block;
+    text-align: center;
+    padding: 20px; 
   } 
 }
 

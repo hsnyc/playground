@@ -5,7 +5,7 @@ var sectionHeight;
 navMenu.addEventListener('click', dropMenu , false);
 
 function dropMenu(e) {
-    //console.log(e);
+    // console.log("DropMenu");
 
     //check for children
     if(e.target.classList.contains('menu') && e.target.children.length !== 0) {
@@ -69,22 +69,28 @@ function dropMenu(e) {
 
 window.addEventListener('mouseup', hideMenu , false);
 
+//This function will make sure the sub-menu hides when other menu item is clicked OR when any other item is clicked outside the drop menu.
 function hideMenu(e) {
-    //console.log(e);
-
-    var menu = document.querySelectorAll('.menu');
+    
+    var menu = document.querySelectorAll('.drop-menu');
+    // console.log(menu)
 
     for(var i = 0; i < menu.length; i++){
+       
         if(e.target !== menu[i] && e.target !== menu[i].children[0]) {
+
+            //makes sure the clicked element DOES not equal to the drop menu or the first child of that menu (the drop icon)
             if(menu[i].children.length !== 0){
                 menu[i].children[0].classList.remove('spin');
 
                 //check for screen size
                 if(document.documentElement.clientWidth <= 960) {
+                    
                     //hide mobile menu
                     menu[i].children[1].classList.remove('show-mobile-menu');
                     menu[i].children[1].removeAttribute("style");
                 } else {
+                    
                     menu[i].children[1].classList.remove('show-menu');
                     //console.log(menu[i]);
                 }

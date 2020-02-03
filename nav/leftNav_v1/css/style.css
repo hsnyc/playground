@@ -53,7 +53,15 @@ p {
     color: #dd6f53;
   }
 
+  header {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
 #main {
+  display: flex;
+  flex-flow: row wrap;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -61,12 +69,15 @@ p {
 }
 
 /*==== NAV ====*/
-/*==== HEADER ====*/
-header {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+
+.nav-sidebar {
+  width: 20%;
 }
+
+.main-content {
+  width: 80%;
+}
+  
 
 nav {
   display: flex;

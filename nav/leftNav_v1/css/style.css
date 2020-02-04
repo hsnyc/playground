@@ -18,7 +18,6 @@ body {
   font-family: "Nunito Sans", monospace;
   color: #65646A;
   margin: 0;
-  /* padding: 20px;  */
 }
 
 h1, h2, h3, h4, h5 {
@@ -49,15 +48,16 @@ p {
   padding: 1em;
   text-align: center;
 }
-  .outdatedbrowser a {
-    color: #dd6f53;
-  }
 
-  header {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+.outdatedbrowser a {
+  color: #dd6f53;
+}
+
+header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 #main {
   display: flex;
@@ -85,7 +85,6 @@ nav {
   position: fixed;
   display: flex;
   flex-flow: row nowrap;
-  /* padding: 20px; */
   align-items: center;
   /* Smoother animations */ 
 }
@@ -104,7 +103,6 @@ nav *:after {
 }
 
 .nav-menu {
-  /* position: relative; */
   flex: 1 1 80%;
   padding: 0;
   list-style: none;
@@ -113,7 +111,6 @@ nav *:after {
 }
 
 .nav-menu > li {
-  /* display: inline-block; */
   padding: 10px 0;
 }
 
@@ -135,7 +132,6 @@ nav *:after {
   height: 0;
   width: 100%;
   overflow: hidden;
-  /* position: absolute; */
   color: #fff;
   background-color: #808080;
   padding: 0;
@@ -145,23 +141,9 @@ nav *:after {
   outline: none;
 }
 
-/* .sub-menu:after {
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  content: '';
-  transform: translate(0%, -100%);
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-bottom: 7px solid #4f5d75; 
-} */
-
 .sub-menu li {
   display: block;
   text-align: left;
-  /* padding: 10px 20px;  */
 }
 
 .sub-menu li a {
@@ -404,9 +386,4 @@ footer a {
   .main-content {
     width: 100%;
   }
-}
-  
-/* Smartphones (portrait) ----------- */
-  @media only screen and (max-width : 320px) {
-  /* Styles */
 }

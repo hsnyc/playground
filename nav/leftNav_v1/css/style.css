@@ -80,9 +80,9 @@ p {
   transition: width 500ms ease-out;
   padding: 10px;
 }
-  
 
 nav {
+  position: fixed;
   display: flex;
   flex-flow: row nowrap;
   /* padding: 20px; */

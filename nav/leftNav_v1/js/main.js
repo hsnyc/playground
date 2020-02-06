@@ -125,3 +125,29 @@ function showMenu(e) {
 
     e.stopPropagation();
 }
+
+
+// Make the left Nav Stick ============================================= //
+
+  // Get the widget
+  var widgetDiv = document.querySelector('#nav-menu');
+//   console.log(widgetDiv);
+  
+  //only do this if the element exist on the page.
+  if (widgetDiv) {
+    
+    // Get the top offset position of the widget
+    var sticky = widgetDiv.offsetTop - 20;
+    // subtracting 20px from top to make it seemless.
+
+    // When the user scrolls the page, execute this Function 
+    window.onscroll = function() {
+      
+    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    if (window.pageYOffset > sticky) {
+        widgetDiv.classList.add("sticky");
+      } else {
+        widgetDiv.classList.remove("sticky");
+      }
+    };
+  }

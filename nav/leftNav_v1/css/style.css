@@ -82,7 +82,7 @@ header {
 }
 
 nav {
-  position: fixed;
+  /* position: fixed; */
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -93,6 +93,11 @@ nav *,
 nav *:before,
 nav *:after {
   transform: translate3d(0, 0, 0); 
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
 }
 
 .logo {

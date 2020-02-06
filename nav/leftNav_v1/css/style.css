@@ -83,6 +83,7 @@ header {
 
 nav {
   /* position: fixed; */
+  
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -96,6 +97,7 @@ nav *:after {
 }
 
 .sticky {
+  width: 15%;
   position: fixed;
   top: 0;
 }

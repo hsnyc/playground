@@ -28,6 +28,13 @@ h1 {
   margin: 1em 0px 0px;
 }
 
+h3 {
+  background-color: rgb(240, 138, 23);
+  padding: 10px;
+  color: #fff;
+  margin-top: 40px;
+}
+
 p {
     font-style: normal;
     font-weight: 300;
@@ -82,8 +89,7 @@ header {
 }
 
 nav {
-  /* position: fixed; */
-  
+  position: sticky;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;

@@ -1,106 +1,3 @@
-// NAV Menu Drop Downs =================================//
-var navMenu = document.querySelector('.nav-menu');
-var sectionHeight;
-
-navMenu.addEventListener('click', dropMenu , false);
-
-function dropMenu(e) {
-    // console.log("DropMenu");
-
-    //check for children
-    if(e.target.classList.contains('menu') && e.target.children.length !== 0) {
-        
-        //spin icon
-        e.target.children[0].classList.toggle('spin');
-
-        //check for screen size
-        if(document.documentElement.clientWidth <= 960) {
-
-            if(e.target.children[1].classList.contains('show-mobile-menu')) {
-                //if mobile menu is showing then collapse it
-                e.target.children[1].removeAttribute("style");
-            
-            } else {
-                //otherwise open it to content height
-                sectionHeight = e.target.children[1].scrollHeight;
-                e.target.children[1].style.height = sectionHeight + 'px';
-            }
-
-            e.target.children[1].classList.toggle('show-mobile-menu');
-
-        } else {
-            //show menu
-            e.target.children[1].classList.toggle('show-menu');
-        }
-
-    }
-    
-    //check for icon click
-    if (e.target.classList.contains('menu-icon')) {
-
-        //spin icon
-        e.target.classList.toggle('spin');
-
-        //check for screen size
-        if(document.documentElement.clientWidth <= 960) {
-            
-            if(e.target.nextElementSibling.classList.contains('show-mobile-menu')) {
-                //if mobile menu is showing then collapse it
-                e.target.nextElementSibling.removeAttribute("style");
-            
-            } else {
-                //otherwise open it to content height
-                sectionHeight = e.target.nextElementSibling.scrollHeight;
-                e.target.nextElementSibling.style.height = sectionHeight + 'px';
-            }
-
-            e.target.nextElementSibling.classList.toggle('show-mobile-menu');
-
-
-        } else {
-            //show menu
-            e.target.nextElementSibling.classList.toggle('show-menu');
-        }
-
-    }
-
-    e.stopPropagation();
-};
-
-window.addEventListener('mouseup', hideMenu , false);
-
-//This function will make sure the sub-menu hides when other menu item is clicked OR when any other item is clicked outside the drop menu.
-function hideMenu(e) {
-    
-    var menu = document.querySelectorAll('.drop-menu');
-    // console.log(menu)
-
-    for(var i = 0; i < menu.length; i++){
-       
-        if(e.target !== menu[i] && e.target !== menu[i].children[0]) {
-
-            //makes sure the clicked element DOES not equal to the drop menu or the first child of that menu (the drop icon)
-            if(menu[i].children.length !== 0){
-                menu[i].children[0].classList.remove('spin');
-
-                //check for screen size
-                if(document.documentElement.clientWidth <= 960) {
-                    
-                    //hide mobile menu
-                    menu[i].children[1].classList.remove('show-mobile-menu');
-                    menu[i].children[1].removeAttribute("style");
-                } else {
-                    
-                    menu[i].children[1].classList.remove('show-menu');
-                    //console.log(menu[i]);
-                }
-            } 
-        }
-    }
-    e.stopPropagation();
-}
-
-
 // Mobile NAV Flyout Menu ======================================//
 var roundButton = document.querySelector('#roundButton');
 roundButton.addEventListener("click", showMenu, false);
@@ -127,27 +24,189 @@ function showMenu(e) {
 }
 
 
-// Make the left Nav Stick ============================================= //
+// Make the left Nav Stick and Active when section is scrolled into view ============================================= //
+//get menu items
+let navMenuItems = document.querySelectorAll('#nav-menu .menu');
 
-  // Get the widget
-  var widgetDiv = document.querySelector('#nav-menu');
-//   console.log(widgetDiv);
+// Get the nav Element
+var navElem = document.querySelector('#nav-menu');
+
+//get all anchors the menu items will reference
+var sectionDiv = document.querySelectorAll('.nav-anchor');
+  
+//   var bounding = sectionDiv2.getBoundingClientRect();
+
+  const inViewElems = [];
+
+  let activeElemIndx = 0;
+
+  let sectionPos = [];
+  for (let i = 0; i < sectionDiv.length; i++) {
+    sectionPos.push(sectionDiv[i].offsetTop);
+    // console.log(sectionDiv[i].offsetTop);
+  }
   
   //only do this if the element exist on the page.
-  if (widgetDiv) {
+  if (navElem) {
     
-    // Get the top offset position of the widget
-    var sticky = widgetDiv.offsetTop - 20;
+    /* Get the top offset position of the widget. Enable this if you need to support IE11 */
+    // var sticky = navElem.offsetTop - 20;
     // subtracting 20px from top to make it seemless.
 
     // When the user scrolls the page, execute this Function 
-    window.onscroll = function() {
-      
-    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-    if (window.pageYOffset > sticky) {
-        widgetDiv.classList.add("sticky");
-      } else {
-        widgetDiv.classList.remove("sticky");
-      }
-    };
+    //window.onscroll = scroll;
+    window.onscroll = throttle(scroll, 10);
   }
+
+  //scroll function
+function scroll() {
+      
+    /* Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position. Using position: sticky which is not supported in IE. Enable this if you need to support IE11 */
+    // if (window.pageYOffset > sticky) {
+    //     navElem.classList.add("sticky");
+    //   } else {
+    //     navElem.classList.remove("sticky");
+    // }
+
+    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    for (let i = 0; i < sectionDiv.length; i++) {
+
+        if(isInViewport(sectionDiv[i])) {
+            // console.log(sectionDiv[i]);
+
+            //add the elems to array
+            inViewElems.push(i);
+            // console.log(inViewElems[i]);
+
+            //check if there is more than one elem
+            if(inViewElems.length > 1) {
+                // console.log("Greater then 1");
+                // console.log(inViewElems.length);
+
+                //what is the lowest index
+                activeElemIndx = arrayMin(inViewElems);
+                //commented out since IE11 does not support spread operator
+                // activeElemIndx = Math.min(...inViewElems);
+                // console.log("Active elem: " + activeElemIndx);
+            } else {
+                activeElemIndx = inViewElems[0];
+                // console.log("Single elem: " + activeElemIndx);
+            }
+        }
+    }
+
+    //make menu active
+    //check for active class on all li elements
+    for (let i = 0; i < navMenuItems.length; i++) { 
+        if(navMenuItems[i].classList.contains('active')) {
+            //remove class from current active elem
+            navMenuItems[i].classList.remove('active');
+        }
+    }
+
+    //add the active class to clicked element
+    navMenuItems[activeElemIndx].classList.add('active');
+
+    // console.log(inViewElems);
+
+    inViewElems.length = 0;
+
+    // Scroll to Top 
+    scrollFunction();
+
+}//<--- scroll() : end --|
+
+//Get min number from array
+function arrayMin(arr) {
+    return arr.reduce(function (p, v) {
+      return ( p < v ? p : v );
+    });
+}
+
+
+/* 
+    Check if elem is in viewport
+    https://gomakethings.com/how-to-test-if-an-element-is-in-the-viewport-with-vanilla-javascript/
+*/
+var isInViewport = function (elem) {
+    var bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top >= -10 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
+
+/*
+    Implementing throttling to only fire the scroll function every so often - example, every 10ms
+    https://blog.bitsrc.io/understanding-throttling-and-debouncing-973131c1ba07
+*/
+function throttle(f, t) {
+    return function (args) {
+        let previousCall = this.lastCall;
+        this.lastCall = Date.now();
+        if (previousCall === undefined // function is being called for the first time
+            || (this.lastCall - previousCall) > t) { // throttle time has elapsed
+        f(args);
+        }
+    }
+};
+
+
+// Smooth Scroll to #links ============================================= //
+//get all anchor links in the document which href start with a hash
+var links = document.querySelectorAll('a[href^="#"]');
+
+//assign a click event to all the # links
+for(var l = 0; l < links.length; l++) {
+    links[l].addEventListener('click', scrollMe, false);
+    // console.log(links[l]);
+}
+
+function scrollMe(e) {
+    e.preventDefault(); //needed in order for the scroll to work
+
+    var hash = e.target.hash;
+
+    //check if hash is not empty
+    if(hash) {   
+
+        // Scroll to that element
+        document.querySelector(hash).scrollIntoView({ 
+           behavior: 'smooth'
+        });
+    }
+}
+//<--- scrollMe(e) : end --|
+/*
+    If you need to support IE11 (and maybe Edge as the above function is not yet fully supported in Edge) then use jQuery and add the code below. Just uncomment.
+*/
+
+
+/* jQuery Alternative to support IE11
+Select all links with hashes */
+//$('a[href*="#"]')
+  /* Remove links that don't actually link to anything */
+//   .not('[href="#"]')
+//   .not('[href="#0"]')
+//   .click(function(event) {
+    // On-page links
+    // if (
+    //   location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+    //   && 
+    //   location.hostname == this.hostname
+    // ) {
+      /* Figure out element to scroll to */
+    //   var target = $(this.hash);
+    //   target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      /* Does a scroll target exist? */
+      //if (target.length) {
+        /* Only prevent default if animation is actually gonna happen */
+//         event.preventDefault();
+//         $('html, body').animate({
+//           scrollTop: target.offset().top
+//         }, 1000 );
+//       }
+//     }
+//   });

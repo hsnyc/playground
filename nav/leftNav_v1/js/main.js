@@ -152,3 +152,61 @@ function throttle(f, t) {
         }
     }
 };
+
+
+// Smooth Scroll to #links ============================================= //
+//get all anchor links in the document which href start with a hash
+var links = document.querySelectorAll('a[href^="#"]');
+
+//assign a click event to all the # links
+for(var l = 0; l < links.length; l++) {
+    links[l].addEventListener('click', scrollMe, false);
+    // console.log(links[l]);
+}
+
+function scrollMe(e) {
+    e.preventDefault(); //needed in order for the scroll to work
+
+    var hash = e.target.hash;
+
+    //check if hash is not empty
+    if(hash) {   
+
+        // Scroll to that element
+        document.querySelector(hash).scrollIntoView({ 
+           behavior: 'smooth'
+        });
+    }
+}
+//<--- scrollMe(e) : end --|
+/*
+    If you need to support IE11 (and maybe Edge as the above function is not yet fully supported in Edge) then use jQuery and add the code below. Just uncomment.
+*/
+
+
+/* jQuery Alternative to support IE11
+Select all links with hashes */
+//$('a[href*="#"]')
+  /* Remove links that don't actually link to anything */
+//   .not('[href="#"]')
+//   .not('[href="#0"]')
+//   .click(function(event) {
+    // On-page links
+    // if (
+    //   location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+    //   && 
+    //   location.hostname == this.hostname
+    // ) {
+      /* Figure out element to scroll to */
+    //   var target = $(this.hash);
+    //   target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      /* Does a scroll target exist? */
+      //if (target.length) {
+        /* Only prevent default if animation is actually gonna happen */
+//         event.preventDefault();
+//         $('html, body').animate({
+//           scrollTop: target.offset().top
+//         }, 1000 );
+//       }
+//     }
+//   });

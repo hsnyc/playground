@@ -30,7 +30,7 @@
     
                 <!-- Main Nav -->
                 <ul id="nav-menu">	
-                    <li class="menu"><a href="#section-one">Section One</a></li>
+                    <li class="menu active"><a href="#section-one">Section One</a></li>
                     <li class="menu"><a href="#section-two">Section Two</a></li>
                     <li class="menu"><a href="#section-three">Section Three</a></li>
                     <li class="menu"><a href="#section-four">Section Four</a></li>
@@ -45,8 +45,9 @@
             <h2>A bunch of sections here</h2>
 
             <section id="section-one">
-                <h3>Section 1</h3>
-                <p class="nav-anchor">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores asperiores velit dolorum debitis labore! Odit, consectetur delectus molestias modi suscipit distinctio iste, blanditiis, totam ex illo quod porro saepe maiores? sit amet consectetur adipisicing elit. Laboriosam, autem. Voluptate commodi doloremque hic ipsa necessitatibus voluptates aliquid. Non maxime illo dolor veniam, deleniti ab molestias rem itaque similique blanditiis quaerat explicabo sunt rerum nobis obcaecati eius officia, id quae.</p>
+                <h3>Section 1 - anchor</h3>
+                <p class="nav-anchor">A 'nav-anchor' class is added to the element you want to serve as the anchor for reference in the nav menu.</p>
+                <p>The element with the 'nav-anchor' class must be fully visible in the viewport so the menu recognizes and marks the nav menu item as 'active'. So if the element you designate as the anchor is too large that it is not fully visible in the viewport, then it will not be recognized by the logic and the menu will not be highlighted. Sorry this is the way the code works at this time and I have not had time to enhance this logic. My suggestion is to use a heading item, or an element you know it will be small enough to fit on the viewport </p>
                 <p>Voluptate commodi doloremque hic ipsa necessitatibus voluptates aliquid. Non maxime illo dolor veniam, deleniti ab molestias rem itaque similique blanditiis quaerat explicabo sunt rerum nobis obcaecati eius officia, id quae.</p>
             </section>
 
@@ -82,7 +83,9 @@
         
     </section>
     
+    <!-- Making the footer large to test nav spacing -->
     <footer>
+        <h2>A really big Footer</h2>
         <small><a href="#">hsnyc</a></small>
     </footer>
 

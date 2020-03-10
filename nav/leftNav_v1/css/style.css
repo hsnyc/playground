@@ -95,6 +95,7 @@ nav {
   top: 20;
 }
 
+/* only using if IE11 support is needed */
 .sticky {
   width: 15%;
   position: fixed;
@@ -108,7 +109,7 @@ nav {
   justify-content: center; 
 }
 
-.nav-menu {
+#nav-menu {
   flex: 1 1 80%;
   padding: 0;
   list-style: none;
@@ -116,52 +117,24 @@ nav {
   outline: none; 
 }
 
-.nav-menu > li {
-  padding: 10px 0;
-}
-
-.nav-menu > li > a {
+#nav-menu > li > a {
+  padding: 10px;
+  display: block;
   color: #65646A;
   text-decoration: none;
 }
 
-.nav-menu li a:hover {
+#nav-menu li a:hover {
   opacity: .8;
+  background-color: #CCCCCC;
 }
 
-.nav-menu li:hover {
+#nav-menu li:hover {
   cursor: pointer; 
 }
 
-.sub-menu {
-  opacity: 0;
-  height: 0;
-  width: 100%;
-  overflow: hidden;
-  color: #fff;
-  background-color: #808080;
-  padding: 0;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-  transition: opacity 400ms cubic-bezier(0.68, -0.08, 0.04, 1.15), transform 400ms cubic-bezier(0.68, -0.08, 0.04, 1.15), scale 400ms cubic-bezier(0.68, -0.08, 0.04, 1.15);
-  outline: none;
-}
-
-.sub-menu li {
-  display: block;
-  text-align: left;
-}
-
-.sub-menu li a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 20px;
-}
-
-.sub-menu li:hover {
-  border-radius: 4px;
-  background-color: #8a8a8a; 
+.active {
+  background-color: #CCCCCC;
 }
 
 .menu-icon {
@@ -320,7 +293,7 @@ nav {
     display: inline-block; 
   }
 
-  .nav-menu {
+  #nav-menu {
     opacity: 0;
     position: fixed;
     width: 100vw;
@@ -341,12 +314,12 @@ nav {
     transform: translate3d(0vw, 0, 0); 
   }
 
-  .nav-menu > li {
+  #nav-menu > li {
     display: block;
     padding: 20px; 
   }
 
-  .nav-menu li:hover {
+  #nav-menu li:hover {
     cursor: pointer; 
   }
 
@@ -367,8 +340,15 @@ nav {
 
 /*==== FOOTER ====*/
 footer {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 20px;
+  height: 800px;
   flex: 0 1 auto;
   justify-self: baseline;
+  border: 1px solid #ccc;
+  align-items: center;
+  background-color: #F9F9F9;
 }
 
 footer a {

@@ -26,11 +26,12 @@ function showMenu(e) {
 
 // Make the left Nav Stick and Active when section is scrolled into view ============================================= //
 //get menu items
-let navMenuItems = document.querySelectorAll('#survey-menu .menu');
+let navMenuItems = document.querySelectorAll('#nav-menu .menu');
 
-// Get the widget
-var widgetDiv = document.querySelector('#survey-nav');
+// Get the nav Element
+var navElem = document.querySelector('#nav-menu');
 
+//get all anchors the menu items will reference
 var sectionDiv = document.querySelectorAll('.nav-anchor');
   
 //   var bounding = sectionDiv2.getBoundingClientRect();
@@ -46,10 +47,10 @@ var sectionDiv = document.querySelectorAll('.nav-anchor');
   }
   
   //only do this if the element exist on the page.
-  if (widgetDiv) {
+  if (navElem) {
     
-    // Get the top offset position of the widget
-    var sticky = widgetDiv.offsetTop - 20;
+    /* Get the top offset position of the widget. Enable this if you need to support IE11 */
+    // var sticky = navElem.offsetTop - 20;
     // subtracting 20px from top to make it seemless.
 
     // When the user scrolls the page, execute this Function 
@@ -60,12 +61,12 @@ var sectionDiv = document.querySelectorAll('.nav-anchor');
   //scroll function
 function scroll() {
       
-    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-    if (window.pageYOffset > sticky) {
-        widgetDiv.classList.add("sticky");
-      } else {
-        widgetDiv.classList.remove("sticky");
-    }
+    /* Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position. Using position: sticky which is not supported in IE. Enable this if you need to support IE11 */
+    // if (window.pageYOffset > sticky) {
+    //     navElem.classList.add("sticky");
+    //   } else {
+    //     navElem.classList.remove("sticky");
+    // }
 
     // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
     for (let i = 0; i < sectionDiv.length; i++) {

@@ -23,6 +23,7 @@ class Timer {
 
   pause = () => {
     clearInterval(this.interval);
+    offSet = 0;
   };
 
   tick = () => {

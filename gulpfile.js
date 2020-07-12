@@ -1,52 +1,59 @@
-var gulp = require('gulp'),
-    connect = require('gulp-connect')
-    ;
+// Initialize modules
+// Importing specific gulp API functions lets us write them below as series() instead of gulp.series()
+const { src, dest, watch, series, parallel } = require('gulp');
+// Importing all the Gulp-related packages we want to use
+const browserSync = require('browser-sync').create();
+
 
 //create variables
-var jsSources, htmlSources, outputDir;
+const files = {
+  htmlPath: ['**/*.html', '!node_modules/**'],
+  cssPath: ['**/*.css', '!node_modules/**'],
+  jsPath: ['**/*.js', '!node_modules/**']
+}
 
-//output directory
-outputDir = './';
+/*  Globs */
+//  'scripts/**/*.js'
+/*  will match files like scripts/index.js, scripts/nested/index.js, and scripts/nested/twice/index.js */
 
-//Js file sources
-jsSources = [
-  'nav/js/*.js',
-  'components/js/vendor/*.js',
-  'components/js/*.js'
-];
+/*  Negative globs can be used as an alternative for restricting double-star globs. */
+//  ['**/*.js', '!node_modules/**']
+/*  https://gulpjs.com/docs/en/getting-started/explaining-globs */
 
-//html and sass sources
-htmlSources = [outputDir + '**/**/*.html'];
 
-//Tasks Begin
-gulp.task('html', function() {
-  gulp.src(htmlSources)
-  .pipe(connect.reload())
-});
+// Watch task: watch SCSS and JS files for changes
+// If any change, run scss and js tasks simultaneously
+function watchTask(){
+  //start BrowserSync server
+  server();
 
-gulp.task('css', function() {
-  gulp.src('**/**/css/*.css')
-    .pipe(connect.reload())
-});
+  //now watch each file
+  watch(files.htmlPath).on('change', browserSync.reload);
+  watch(files.cssPath).on('change', browserSync.reload);
+  watch(files.jsPath).on('change', browserSync.reload);
+}
 
-gulp.task('js', function() {
-  gulp.src(jsSources)
-    .pipe(connect.reload())
-});
-
-gulp.task('watch', function() {
-  gulp.watch(jsSources, ['js']);
-  gulp.watch(htmlSources,['html']);
-  gulp.watch('**/**/css/*.css',['css']);
-});
-
-gulp.task('connect', function() {
-  connect.server({
-    name: 'Playground',
-    root: outputDir,
-    port: 8008,
-    livereload: true
+// https://www.browsersync.io/docs/options#option-server
+function server() {
+  browserSync.init({
+    server: {
+        baseDir: './',
+        directory: true
+    },
+    /* 
+    Open in specific browser
+    (On MacOS check Applications folder for name of app) */
+    browser: "FirefoxDeveloperEdition",
+    port: 8080 //<-- changing default port (default:3000);
+    //open: false //<-- enable to prevent opening browser
   });
-});
+}
 
-gulp.task('default', ['html', 'css', 'js', 'connect', 'watch']);
+// Export the default Gulp task so it can be run
+// Runs the scss and js tasks simultaneously
+// then runs cacheBust, then watch task
+
+exports.default = watchTask;
+
+//Server can be started here or in Watch Task
+// exports.build = server();
